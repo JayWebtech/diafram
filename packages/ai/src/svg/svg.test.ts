@@ -23,8 +23,19 @@ describe("sanitizeSvg", () => {
     await expect(sanitizeSvg(svg)).rejects.toBeInstanceOf(SvgValidationError);
   });
 
-  it("rejects disallowed shapes (rect/circle)", async () => {
-    const svg = `<svg viewBox="0 0 10 10"><rect x="0" y="0" width="5" height="5"/></svg>`;
+  it("converts basic shapes (rect/circle/line) to paths", async () => {
+    const svg = `<svg viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <circle cx="12" cy="12" r="5" />
+      <line x1="0" y1="0" x2="10" y2="10" />
+    </svg>`;
+    const out = await sanitizeSvg(svg);
+    expect(out.paths).toHaveLength(3);
+    expect(out.paths.every((p) => p.d.length > 0)).toBe(true);
+  });
+
+  it("still rejects genuinely disallowed elements (text/image)", async () => {
+    const svg = `<svg viewBox="0 0 10 10"><text x="0" y="5">hi</text></svg>`;
     await expect(sanitizeSvg(svg)).rejects.toThrow(/Disallowed element/);
   });
 
@@ -44,7 +55,7 @@ describe("sanitizeSvg", () => {
 
   it("requires a viewBox and at least one path", async () => {
     await expect(sanitizeSvg(`<svg><path d="M0 0 L1 1"/></svg>`)).rejects.toThrow(/viewBox/);
-    await expect(sanitizeSvg(`<svg viewBox="0 0 10 10"></svg>`)).rejects.toThrow(/no <path>/);
+    await expect(sanitizeSvg(`<svg viewBox="0 0 10 10"></svg>`)).rejects.toThrow(/no drawable/);
   });
 });
 

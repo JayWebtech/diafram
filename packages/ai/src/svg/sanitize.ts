@@ -1,23 +1,31 @@
 import { parse, type INode } from "svgson";
+import { CONVERTIBLE_SHAPES, shapeToPathD } from "./shapes";
 
 /**
  * SVG sanitizer + validator.
  *
- * The SVG artist agent is prompted to emit a flat set of stroked `<path>`
- * elements, but model output can't be trusted. This turns an untrusted SVG
- * string into a safe, normalized set of paths, or throws with a specific reason
- * that is fed back to the model for a repair attempt.
+ * Turns an untrusted SVG (from the LLM artist or an imported icon pack) into a
+ * safe, normalized set of stroked paths, or throws with a specific reason that
+ * the artist's repair loop can act on.
  *
- * Rules (v1):
+ * Rules:
  *  - root must be `<svg>` with a `viewBox`
- *  - only `<svg>`, `<g>`, `<path>`, `<title>`, `<desc>` elements allowed
+ *  - allowed: `<svg>`, `<g>`, `<path>`, `<title>`, `<desc>`, and basic shapes
+ *    (`<line>`, `<rect>`, `<circle>`, `<ellipse>`, `<polyline>`, `<polygon>`),
+ *    which are converted to paths — so real icon packs ingest cleanly
  *  - no `<script>`, `<image>`, `<use>`, `<foreignObject>`, `<text>`, event
  *    handlers, or external references (security)
  *  - no element-level `transform` (would desync from precomputed path lengths)
- *  - every path needs a non-empty `d`
  */
 
-const ALLOWED_ELEMENTS = new Set(["svg", "g", "path", "title", "desc"]);
+const ALLOWED_ELEMENTS = new Set([
+  "svg",
+  "g",
+  "path",
+  "title",
+  "desc",
+  ...CONVERTIBLE_SHAPES,
+]);
 
 export class SvgValidationError extends Error {
   constructor(message: string) {
@@ -87,16 +95,22 @@ function walk(node: INode, paths: SanitizedPath[]): void {
     }
     assertSafeAttributes(node);
 
-    if (node.name === "path") {
-      const d = node.attributes.d?.trim();
-      if (!d) throw new SvgValidationError("Found a <path> with an empty d attribute");
-      const sw = node.attributes["stroke-width"];
-      paths.push({
-        d,
-        stroke: normalizeStroke(node.attributes.stroke),
-        strokeWidth: sw !== undefined ? Number(sw) : undefined,
-        fill: normalizeFill(node.attributes.fill),
-      });
+    if (node.name === "path" || CONVERTIBLE_SHAPES.has(node.name)) {
+      const d =
+        node.name === "path" ? node.attributes.d?.trim() : shapeToPathD(node)?.trim();
+      if (node.name === "path" && !d) {
+        throw new SvgValidationError("Found a <path> with an empty d attribute");
+      }
+      // Degenerate shapes convert to null; skip them rather than fail.
+      if (d) {
+        const sw = node.attributes["stroke-width"];
+        paths.push({
+          d,
+          stroke: normalizeStroke(node.attributes.stroke),
+          strokeWidth: sw !== undefined ? Number(sw) : undefined,
+          fill: normalizeFill(node.attributes.fill),
+        });
+      }
     }
   }
   for (const child of node.children) walk(child, paths);
@@ -122,7 +136,7 @@ export async function sanitizeSvg(svg: string): Promise<SanitizedSvg> {
   walk(root, paths);
 
   if (paths.length === 0) {
-    throw new SvgValidationError("SVG contains no <path> elements to draw");
+    throw new SvgValidationError("SVG contains no drawable elements");
   }
   return { viewBox, paths };
 }

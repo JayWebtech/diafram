@@ -127,6 +127,9 @@ importers:
       '@diafram/schema':
         specifier: workspace:*
         version: link:../schema
+      lucide-static:
+        specifier: ^1.23.0
+        version: 1.23.0
       openai:
         specifier: ^4.77.0
         version: 4.104.0(ws@8.21.0)(zod@3.25.76)
@@ -1816,6 +1819,9 @@ packages:
   lru-cache@6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
+
+  lucide-static@1.23.0:
+    resolution: {integrity: sha512-V4tqLEHfvsptGaAZMD8sFJKeGsz2nTAU0+ctxTX3afao/5bs+mhrvvGDmvQmyI7YhQwpIFodZmnkPTMYyGzH4Q==}
 
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
@@ -3837,6 +3843,8 @@ snapshots:
   lru-cache@6.0.0:
     dependencies:
       yallist: 4.0.0
+
+  lucide-static@1.23.0: {}
 
   magic-string@0.30.21:
     dependencies:

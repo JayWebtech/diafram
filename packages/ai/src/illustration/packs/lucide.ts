@@ -1,0 +1,109 @@
+import { readFileSync } from "node:fs";
+import { createRequire } from "node:module";
+import { dirname, join } from "node:path";
+import type { LibraryEntry } from "../starter-pack";
+
+/**
+ * Import icons from the `lucide-static` package (ISC license, ~1,500 consistent
+ * line icons) into `LibraryEntry` shape. Filenames double as keywords, so tags
+ * come for free. Missing files (Lucide renames across versions) are skipped, so
+ * the curated list is resilient.
+ */
+function lucideIconDir(): string {
+  const require = createRequire(import.meta.url);
+  const pkg = require.resolve("lucide-static/package.json");
+  return join(dirname(pkg), "icons");
+}
+
+export interface LucideSpec {
+  /** Lucide icon filename (without .svg). */
+  file: string;
+  /** Extra search keywords beyond the filename tokens. */
+  keywords?: string[];
+}
+
+/** Trim a Lucide file (which has a leading license comment) to its <svg> element. */
+function extractSvg(raw: string): string {
+  const start = raw.indexOf("<svg");
+  const end = raw.lastIndexOf("</svg>");
+  return start !== -1 && end !== -1 ? raw.slice(start, end + "</svg>".length) : raw;
+}
+
+export function loadLucidePack(specs: LucideSpec[]): LibraryEntry[] {
+  const dir = lucideIconDir();
+  const entries: LibraryEntry[] = [];
+
+  for (const spec of specs) {
+    let svg: string;
+    try {
+      svg = extractSvg(readFileSync(join(dir, `${spec.file}.svg`), "utf8"));
+    } catch {
+      continue; // icon not present in this Lucide version — skip
+    }
+    const fileTokens = spec.file.split("-");
+    entries.push({
+      name: spec.file.replace(/-/g, " "),
+      keywords: Array.from(new Set([...fileTokens, ...(spec.keywords ?? [])])),
+      svg,
+    });
+  }
+
+  return entries;
+}
+
+/**
+ * A curated concept set covering common explainer topics. Each entry augments
+ * the filename tokens with domain synonyms so retrieval matches natural briefs.
+ */
+export const CURATED_LUCIDE: LucideSpec[] = [
+  { file: "user", keywords: ["person", "human", "individual", "someone"] },
+  { file: "users", keywords: ["people", "group", "team", "everyone", "crowd"] },
+  { file: "notebook", keywords: ["ledger", "journal", "records", "notes"] },
+  { file: "book-open", keywords: ["book", "reading", "open", "story"] },
+  { file: "file-text", keywords: ["document", "file", "page", "paper", "form"] },
+  { file: "lock", keywords: ["padlock", "secure", "security", "locked", "encryption", "closed"] },
+  { file: "lock-open", keywords: ["unlock", "unlocked", "access", "decrypt", "open"] },
+  { file: "key", keywords: ["password", "secret", "credential", "access", "private"] },
+  { file: "shield", keywords: ["protection", "safe", "defense", "security"] },
+  { file: "shield-check", keywords: ["verified", "protected", "trusted", "secure"] },
+  { file: "check", keywords: ["correct", "done", "valid", "yes", "approved"] },
+  { file: "circle-check", keywords: ["verified", "success", "confirmed", "complete"] },
+  { file: "circle-x", keywords: ["wrong", "error", "rejected", "invalid", "no"] },
+  { file: "arrow-right", keywords: ["arrow", "next", "flow", "forward", "send", "transfer"] },
+  { file: "arrow-left-right", keywords: ["exchange", "swap", "transfer", "between", "trade"] },
+  { file: "link", keywords: ["connection", "chain", "url", "linked"] },
+  { file: "network", keywords: ["nodes", "distributed", "peers", "mesh", "topology", "decentralized"] },
+  { file: "share-2", keywords: ["share", "distribute", "broadcast", "connections", "spread"] },
+  { file: "box", keywords: ["block", "package", "container", "cube", "parcel"] },
+  { file: "boxes", keywords: ["blocks", "stack", "chain", "packages", "storage"] },
+  { file: "database", keywords: ["data", "storage", "records", "db", "store"] },
+  { file: "server", keywords: ["backend", "host", "machine", "compute", "rack"] },
+  { file: "cloud", keywords: ["cloud", "internet", "remote", "hosting", "saas"] },
+  { file: "globe", keywords: ["world", "internet", "web", "global", "earth", "online"] },
+  { file: "wifi", keywords: ["wireless", "signal", "connection", "internet"] },
+  { file: "monitor", keywords: ["computer", "screen", "display", "desktop", "website"] },
+  { file: "laptop", keywords: ["computer", "notebook", "device", "portable"] },
+  { file: "smartphone", keywords: ["phone", "mobile", "device", "cell"] },
+  { file: "mail", keywords: ["email", "message", "envelope", "letter", "inbox"] },
+  { file: "send", keywords: ["send", "submit", "deliver", "transmit"] },
+  { file: "search", keywords: ["find", "magnify", "look", "explore", "discover"] },
+  { file: "eye", keywords: ["view", "see", "watch", "visible", "observe"] },
+  { file: "lightbulb", keywords: ["idea", "insight", "innovation", "think", "solution"] },
+  { file: "brain", keywords: ["think", "mind", "intelligence", "learn", "smart"] },
+  { file: "cpu", keywords: ["processor", "chip", "compute", "hardware"] },
+  { file: "code", keywords: ["programming", "developer", "software", "syntax"] },
+  { file: "git-branch", keywords: ["branch", "version", "fork", "split"] },
+  { file: "coins", keywords: ["money", "currency", "cash", "payment", "token", "crypto"] },
+  { file: "banknote", keywords: ["money", "cash", "bill", "payment", "currency"] },
+  { file: "credit-card", keywords: ["payment", "card", "pay", "purchase", "bank"] },
+  { file: "landmark", keywords: ["bank", "institution", "government", "building", "authority"] },
+  { file: "handshake", keywords: ["agreement", "deal", "trust", "partnership", "consensus"] },
+  { file: "clock", keywords: ["time", "timer", "schedule", "wait", "duration"] },
+  { file: "calendar", keywords: ["date", "schedule", "event", "day", "plan"] },
+  { file: "trending-up", keywords: ["growth", "increase", "rise", "progress", "chart"] },
+  { file: "chart-column", keywords: ["chart", "graph", "bars", "statistics", "data", "analytics"] },
+  { file: "triangle-alert", keywords: ["warning", "caution", "alert", "danger", "risk"] },
+  { file: "fingerprint", keywords: ["identity", "biometric", "unique", "authentication", "signature"] },
+  { file: "scan", keywords: ["scan", "verify", "read", "detect"] },
+  { file: "settings", keywords: ["configuration", "options", "gear", "preferences", "setup"] },
+];

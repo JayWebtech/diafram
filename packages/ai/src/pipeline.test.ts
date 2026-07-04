@@ -1,11 +1,13 @@
 import { zVideoProject } from "@diafram/schema";
 import { describe, expect, it } from "vitest";
 import { generateIllustration } from "./agents/artist";
+import { LlmIllustrationSource } from "./illustration/source";
 import { FakeLlm } from "./llm/fake";
 import { generateVideoProject } from "./pipeline";
 
 const SQUARE = `<svg viewBox="0 0 100 100"><path d="M10 10 L90 10 L90 90 L10 90 Z" stroke="#111111" stroke-width="8" fill="none"/></svg>`;
-const BAD = `<svg viewBox="0 0 10 10"><rect x="0" y="0" width="5" height="5"/></svg>`;
+// A genuinely invalid SVG (disallowed <text> element) to trigger the repair loop.
+const BAD = `<svg viewBox="0 0 10 10"><text x="0" y="5">nope</text></svg>`;
 
 const STORYBOARD_DRAFT = {
   audience: "beginners",
@@ -48,7 +50,12 @@ describe("generateVideoProject", () => {
       // Two unique briefs across the storyboard: padlock, notebook.
       .queueText(SQUARE, SQUARE);
 
-    const { storyboard, project } = await generateVideoProject({ llm, prompt: "Explain blockchain" });
+    // Force the LLM source (bypass the library) to test generation + reuse dedup.
+    const { storyboard, project } = await generateVideoProject({
+      llm,
+      source: new LlmIllustrationSource(llm),
+      prompt: "Explain blockchain",
+    });
 
     // Storyboard was structured and validated.
     expect(storyboard.scenes).toHaveLength(2);
