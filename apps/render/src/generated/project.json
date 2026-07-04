@@ -1,0 +1,2400 @@
+{
+  "id": "prj_70e7e37a67e04987",
+  "title": "Explain blockchain to beginners",
+  "schemaVersion": 1,
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "accentColor": "#f97316",
+  "scenes": [
+    {
+      "id": "scn_0_Introduc",
+      "name": "Introduction to Blockchain",
+      "durationInFrames": 180,
+      "transitionIn": "fade",
+      "camera": {
+        "keyframes": [
+          {
+            "frame": 0,
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "easing": "easeInOut"
+          }
+        ],
+        "shake": null
+      },
+      "layers": [
+        {
+          "id": "lyr_0daa3d9ea67b4f31",
+          "illustrationId": "ill_8b713d31530e4909",
+          "startFrame": 0,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 50,
+            "y": 270,
+            "scale": 1.35,
+            "rotation": 0
+          },
+          "drawOrder": 0,
+          "opacity": 1
+        },
+        {
+          "id": "lyr_742ca6de52494241",
+          "illustrationId": "ill_3dfc89a716ae4e70",
+          "startFrame": 11,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 690,
+            "y": 270,
+            "scale": 2.7,
+            "rotation": 0
+          },
+          "drawOrder": 1,
+          "opacity": 1
+        },
+        {
+          "id": "lyr_d655950d713a4bc7",
+          "illustrationId": "ill_b82bff6a82e340ca",
+          "startFrame": 22,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 1240,
+            "y": 270,
+            "scale": 1.8,
+            "rotation": 0
+          },
+          "drawOrder": 2,
+          "opacity": 1
+        }
+      ],
+      "narration": "Imagine a digital ledger that records every transaction, like a notebook that everyone can see but no one can erase.",
+      "notes": ""
+    },
+    {
+      "id": "scn_1_Blocks_a",
+      "name": "Blocks and Chains",
+      "durationInFrames": 210,
+      "transitionIn": "slide",
+      "camera": {
+        "keyframes": [
+          {
+            "frame": 0,
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "easing": "easeInOut"
+          },
+          {
+            "frame": 209,
+            "x": 0,
+            "y": 0,
+            "scale": 1.15,
+            "rotation": 0,
+            "easing": "easeInOut"
+          }
+        ],
+        "shake": null
+      },
+      "layers": [
+        {
+          "id": "lyr_d01c2982654b4218",
+          "illustrationId": "ill_6daad85ffffe401e",
+          "startFrame": 0,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 104,
+            "y": 270,
+            "scale": 2.16,
+            "rotation": 0
+          },
+          "drawOrder": 0,
+          "opacity": 1
+        },
+        {
+          "id": "lyr_a927418c487744fb",
+          "illustrationId": "ill_86887430c2804763",
+          "startFrame": 11,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 690,
+            "y": 270,
+            "scale": 2.7,
+            "rotation": 0
+          },
+          "drawOrder": 1,
+          "opacity": 1
+        },
+        {
+          "id": "lyr_7db47e9c13d14e80",
+          "illustrationId": "ill_4de48ae019754e78",
+          "startFrame": 22,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 1240,
+            "y": 270,
+            "scale": 1.8,
+            "rotation": 0
+          },
+          "drawOrder": 2,
+          "opacity": 1
+        }
+      ],
+      "narration": "Each page is a block containing a list of transactions. Once full, it's sealed and linked to the previous page, forming a chain.",
+      "notes": ""
+    },
+    {
+      "id": "scn_2_Decentra",
+      "name": "Decentralization",
+      "durationInFrames": 180,
+      "transitionIn": "cut",
+      "camera": {
+        "keyframes": [
+          {
+            "frame": 0,
+            "x": -76.8,
+            "y": 0,
+            "scale": 1.05,
+            "rotation": 0,
+            "easing": "easeInOut"
+          },
+          {
+            "frame": 179,
+            "x": 76.8,
+            "y": 0,
+            "scale": 1.05,
+            "rotation": 0,
+            "easing": "easeInOut"
+          }
+        ],
+        "shake": null
+      },
+      "layers": [
+        {
+          "id": "lyr_f520cd675ba04a8c",
+          "illustrationId": "ill_9956acf3337f4641",
+          "startFrame": 0,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": -17.5,
+            "y": 270,
+            "scale": 1.35,
+            "rotation": 0
+          },
+          "drawOrder": 0,
+          "opacity": 1
+        },
+        {
+          "id": "lyr_2d527efec6e84ae1",
+          "illustrationId": "ill_bd3a9fd96e4844e7",
+          "startFrame": 11,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 510,
+            "y": 270,
+            "scale": 1.8,
+            "rotation": 0
+          },
+          "drawOrder": 1,
+          "opacity": 1
+        },
+        {
+          "id": "lyr_954aab3fb37e42c3",
+          "illustrationId": "ill_1cb2b4ea781340c7",
+          "startFrame": 22,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 1060,
+            "y": 270,
+            "scale": 2.7,
+            "rotation": 0
+          },
+          "drawOrder": 2,
+          "opacity": 1
+        }
+      ],
+      "narration": "Instead of one central notebook, everyone in the network has a copy. This makes it secure and transparent.",
+      "notes": ""
+    },
+    {
+      "id": "scn_3_How_Tran",
+      "name": "How Transactions Work",
+      "durationInFrames": 240,
+      "transitionIn": "whipPan",
+      "camera": {
+        "keyframes": [
+          {
+            "frame": 0,
+            "x": 0,
+            "y": 0,
+            "scale": 0.92,
+            "rotation": 0,
+            "easing": "easeInOut"
+          },
+          {
+            "frame": 120,
+            "x": 0,
+            "y": 0,
+            "scale": 1.2,
+            "rotation": 0,
+            "easing": "easeInOut"
+          },
+          {
+            "frame": 239,
+            "x": 0,
+            "y": 0,
+            "scale": 1.2,
+            "rotation": 0,
+            "easing": "easeInOut"
+          }
+        ],
+        "shake": null
+      },
+      "layers": [
+        {
+          "id": "lyr_cd2250951fee4b96",
+          "illustrationId": "ill_c5e8ffe823c74557",
+          "startFrame": 0,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": -40,
+            "y": 270,
+            "scale": 1.8,
+            "rotation": 0
+          },
+          "drawOrder": 0,
+          "opacity": 1
+        },
+        {
+          "id": "lyr_9d5ba0f6fbc54652",
+          "illustrationId": "ill_d4b0473d0e414d81",
+          "startFrame": 11,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 744,
+            "y": 270,
+            "scale": 1.08,
+            "rotation": 0
+          },
+          "drawOrder": 1,
+          "opacity": 1
+        },
+        {
+          "id": "lyr_223b736e10e343ee",
+          "illustrationId": "ill_c46c38aa5a2d4025",
+          "startFrame": 22,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 1330,
+            "y": 270,
+            "scale": 2.7,
+            "rotation": 0
+          },
+          "drawOrder": 2,
+          "opacity": 1
+        }
+      ],
+      "narration": "When you send money, it's broadcast to the network. Miners verify the transaction and add it to a new block.",
+      "notes": ""
+    },
+    {
+      "id": "scn_4_Security",
+      "name": "Security Through Hashing",
+      "durationInFrames": 210,
+      "transitionIn": "fade",
+      "camera": {
+        "keyframes": [
+          {
+            "frame": 0,
+            "x": 0,
+            "y": 0,
+            "scale": 1.02,
+            "rotation": 0,
+            "easing": "easeInOut"
+          }
+        ],
+        "shake": {
+          "amplitude": 10,
+          "frequency": 6,
+          "seed": 5
+        }
+      },
+      "layers": [
+        {
+          "id": "lyr_f0e5cdc953174d08",
+          "illustrationId": "ill_d1553be44486461a",
+          "startFrame": 0,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 50,
+            "y": 270,
+            "scale": 2.7,
+            "rotation": 0
+          },
+          "drawOrder": 0,
+          "opacity": 1
+        },
+        {
+          "id": "lyr_d2fbe446c2344a95",
+          "illustrationId": "ill_bf3a3bb55ea441b2",
+          "startFrame": 11,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 690,
+            "y": 270,
+            "scale": 2.7,
+            "rotation": 0
+          },
+          "drawOrder": 1,
+          "opacity": 1
+        },
+        {
+          "id": "lyr_d11dd38381f34489",
+          "illustrationId": "ill_b29b79fd96fb4538",
+          "startFrame": 22,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 1240,
+            "y": 270,
+            "scale": 1.8,
+            "rotation": 0
+          },
+          "drawOrder": 2,
+          "opacity": 1
+        }
+      ],
+      "narration": "Each block has a unique fingerprint called a hash. Changing any block would break the chain, making fraud easy to detect.",
+      "notes": ""
+    },
+    {
+      "id": "scn_5_Conclusi",
+      "name": "Conclusion",
+      "durationInFrames": 150,
+      "transitionIn": "cut",
+      "camera": {
+        "keyframes": [
+          {
+            "frame": 0,
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "easing": "easeInOut"
+          },
+          {
+            "frame": 149,
+            "x": 0,
+            "y": 0,
+            "scale": 1.15,
+            "rotation": 0,
+            "easing": "easeInOut"
+          }
+        ],
+        "shake": null
+      },
+      "layers": [
+        {
+          "id": "lyr_a18dfb37d3a7440a",
+          "illustrationId": "ill_879839ecdc4f496f",
+          "startFrame": 0,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 50,
+            "y": 270,
+            "scale": 1.35,
+            "rotation": 0
+          },
+          "drawOrder": 0,
+          "opacity": 1
+        },
+        {
+          "id": "lyr_3ab1cacc87014184",
+          "illustrationId": "ill_c4164710dd674745",
+          "startFrame": 11,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 690,
+            "y": 270,
+            "scale": 2.7,
+            "rotation": 0
+          },
+          "drawOrder": 1,
+          "opacity": 1
+        },
+        {
+          "id": "lyr_6216e6d1cfe14185",
+          "illustrationId": "ill_085c892e557a47d7",
+          "startFrame": 22,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 1330,
+            "y": 270,
+            "scale": 2.7,
+            "rotation": 0
+          },
+          "drawOrder": 2,
+          "opacity": 1
+        }
+      ],
+      "narration": "Blockchain is a transparent, secure, and decentralized way to record transactions. It's the foundation of cryptocurrencies like Bitcoin.",
+      "notes": ""
+    }
+  ],
+  "illustrations": [
+    {
+      "id": "ill_8b713d31530e4909",
+      "name": "open notebook",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 400,
+        "height": 400
+      },
+      "paths": [
+        {
+          "id": "pth_430a48cfec9f4b2f",
+          "d": "M 80 60 L 80 340 Q 120 320 200 340 L 200 60 Q 120 80 80 60 Z",
+          "order": 0,
+          "length": 804.6560572404094,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_90e0fc67b0594b34",
+          "d": "M 200 60 L 200 340 Q 280 320 320 340 L 320 60 Q 280 80 200 60 Z",
+          "order": 1,
+          "length": 804.6560572404094,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_b2e18a34d9bb4916",
+          "d": "M 200 60 L 200 340",
+          "order": 2,
+          "length": 280,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_36ced0badfb04761",
+          "d": "M 110 120 L 180 120",
+          "order": 3,
+          "length": 70,
+          "strokeWidth": 6,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_c23da7bb9b934117",
+          "d": "M 110 160 L 180 160",
+          "order": 4,
+          "length": 70,
+          "strokeWidth": 6,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_15545144fae34a78",
+          "d": "M 110 200 L 170 200",
+          "order": 5,
+          "length": 60,
+          "strokeWidth": 6,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_6b65bc1466964b0a",
+          "d": "M 110 240 L 180 240",
+          "order": 6,
+          "length": 70,
+          "strokeWidth": 6,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_856878229c844898",
+          "d": "M 110 280 L 160 280",
+          "order": 7,
+          "length": 50,
+          "strokeWidth": 6,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_29ffcdbea609470c",
+          "d": "M 220 120 L 290 120",
+          "order": 8,
+          "length": 70,
+          "strokeWidth": 6,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_273470155e3a4ce5",
+          "d": "M 220 160 L 300 160",
+          "order": 9,
+          "length": 80,
+          "strokeWidth": 6,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_3946b9a1f574420a",
+          "d": "M 220 200 L 280 200",
+          "order": 10,
+          "length": 60,
+          "strokeWidth": 6,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_59412a23266b4045",
+          "d": "M 220 240 L 295 240",
+          "order": 11,
+          "length": 75,
+          "strokeWidth": 6,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_4c97826d37724a9b",
+          "d": "M 220 280 L 270 280",
+          "order": 12,
+          "length": 50,
+          "strokeWidth": 6,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_ae5098f48de54c95",
+          "d": "M 200 60 L 200 100 L 215 90 L 230 100 L 230 60",
+          "order": 13,
+          "length": 116.05551275463989,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        }
+      ],
+      "accentColor": "#f97316",
+      "promptHash": "1b05895634802daeb3739a19cfa2cbaebd459afea98ab77be0848f0a166c9519",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_3dfc89a716ae4e70",
+      "name": "pen writing",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 200,
+        "height": 200
+      },
+      "paths": [
+        {
+          "id": "pth_4cbe19c404c5438f",
+          "d": "M 60 160 L 140 40",
+          "order": 0,
+          "length": 144.22205101855957,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_4d02f82d40c24196",
+          "d": "M 140 40 L 155 20",
+          "order": 1,
+          "length": 25,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_c7e1a65d38334425",
+          "d": "M 70 145 L 80 155",
+          "order": 2,
+          "length": 14.142135623730951,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_206e60bd01394dd7",
+          "d": "M 85 120 L 115 70",
+          "order": 3,
+          "length": 58.309518948453004,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_5dda026c6c0f4361",
+          "d": "M 155 20 Q 165 30 160 45 T 170 70",
+          "order": 4,
+          "length": 56.35909555209757,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_6b5ca8effe134fd0",
+          "d": "M 170 70 Q 172 72 170 74",
+          "order": 5,
+          "length": 4.591174298785276,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        }
+      ],
+      "accentColor": "#f97316",
+      "promptHash": "3d14db3ba368bd0abcb942581738f3decef0117e8968b07cb4848e58dd6f009b",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_b82bff6a82e340ca",
+      "name": "chain of blocks",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 400,
+        "height": 300
+      },
+      "paths": [
+        {
+          "id": "pth_9893f66aef49423c",
+          "d": "M50 100 L150 100 L150 200 L50 200 Z",
+          "order": 0,
+          "length": 400,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_cd3a0f79673544bc",
+          "d": "M150 100 L250 100 L250 200 L150 200 Z",
+          "order": 1,
+          "length": 400,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_281d06520db94c01",
+          "d": "M250 100 L350 100 L350 200 L250 200 Z",
+          "order": 2,
+          "length": 400,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_31044b8fd1164c66",
+          "d": "M145 150 L155 150",
+          "order": 3,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_9fc34c6a99d9401d",
+          "d": "M145 140 L155 140",
+          "order": 4,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_3a327bfc211842e0",
+          "d": "M145 140 L145 150",
+          "order": 5,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_626c9a14c4244ce6",
+          "d": "M155 140 L155 150",
+          "order": 6,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_bc4763e7c8f64fdc",
+          "d": "M245 150 L255 150",
+          "order": 7,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_1c6745d4feae498b",
+          "d": "M245 140 L255 140",
+          "order": 8,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_404b306a7ef84e82",
+          "d": "M245 140 L245 150",
+          "order": 9,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_333eeb7fa2c348e4",
+          "d": "M255 140 L255 150",
+          "order": 10,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        }
+      ],
+      "accentColor": "#f97316",
+      "promptHash": "bee769e0dba662cfb3e04d9a7537f0702badb284b3bc3e4966d94cfeffeba8b8",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_6daad85ffffe401e",
+      "name": "stack of blocks",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 200,
+        "height": 250
+      },
+      "paths": [
+        {
+          "id": "pth_ff4fa596eea54075",
+          "d": "M30 200 L170 200 L170 150 L30 150 Z",
+          "order": 0,
+          "length": 380,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_055b72bc15794e14",
+          "d": "M50 150 L150 150 L150 100 L50 100 Z",
+          "order": 1,
+          "length": 300,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_e2f005ca060e4e9a",
+          "d": "M70 100 L130 100 L130 50 L70 50 Z",
+          "order": 2,
+          "length": 220,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_1874c1cc3e824364",
+          "d": "M70 75 L130 75",
+          "order": 3,
+          "length": 60,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        }
+      ],
+      "accentColor": "#f97316",
+      "promptHash": "69f47418fc09e67b81e4fc3c650e0bf73a2838a7bae54a1eabca340a6f3cb60c",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_86887430c2804763",
+      "name": "chain links",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 200,
+        "height": 200
+      },
+      "paths": [
+        {
+          "id": "pth_9f790ec46a2e49bc",
+          "d": "M60 50 Q60 20 80 20 Q100 20 100 50 L100 150 Q100 180 80 180 Q60 180 60 150 Z",
+          "order": 0,
+          "length": 363.60327133857885,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_cefb7a7f7ca04c45",
+          "d": "M100 70 Q100 40 120 40 Q140 40 140 70 L140 130 Q140 160 120 160 Q100 160 100 130 Z",
+          "order": 1,
+          "length": 283.60327133857885,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_4cdf01523316420a",
+          "d": "M140 50 Q140 20 160 20 Q180 20 180 50 L180 150 Q180 180 160 180 Q140 180 140 150 Z",
+          "order": 2,
+          "length": 363.60327133857885,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        }
+      ],
+      "accentColor": "#f97316",
+      "promptHash": "a092d504e2349aed11a30773479d93b15844c82b4d0fba4dd25c53ee6dbfb6b6",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_4de48ae019754e78",
+      "name": "new block adding",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 400,
+        "height": 300
+      },
+      "paths": [
+        {
+          "id": "pth_5d0cacc069c045b9",
+          "d": "M 80 80 L 200 80 L 200 200 L 80 200 Z",
+          "order": 0,
+          "length": 480,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_aff755134e464404",
+          "d": "M 200 100 L 320 100 L 320 220 L 200 220 Z",
+          "order": 1,
+          "length": 480,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_71b44ca790e84393",
+          "d": "M 260 60 L 260 90",
+          "order": 2,
+          "length": 30,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_dba31b00ba60435b",
+          "d": "M 250 75 L 260 90 L 270 75",
+          "order": 3,
+          "length": 36.05551275463989,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_04369865539e4752",
+          "d": "M 260 145 L 260 175",
+          "order": 4,
+          "length": 30,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_97f1adbfdf8c4e73",
+          "d": "M 245 160 L 275 160",
+          "order": 5,
+          "length": 30,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        }
+      ],
+      "accentColor": "#f97316",
+      "promptHash": "a53fd27563c974acb2e66f174cdf75f9a8a28bb9c76378e7797b930b798eac57",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_9956acf3337f4641",
+      "name": "multiple notebooks",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 500,
+        "height": 400
+      },
+      "paths": [
+        {
+          "id": "pth_e02e8dc8c7fc46ac",
+          "d": "M80 80 L80 320 L260 320 L260 80 Z",
+          "order": 0,
+          "length": 840,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_e6a6b72924f3448e",
+          "d": "M100 80 L100 320",
+          "order": 1,
+          "length": 240,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_8a9353b01eeb4286",
+          "d": "M90 110 L90 120",
+          "order": 2,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_44f0586bb29a4ae5",
+          "d": "M90 150 L90 160",
+          "order": 3,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_448472d565294599",
+          "d": "M90 190 L90 200",
+          "order": 4,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_15baf795d32b4ede",
+          "d": "M90 230 L90 240",
+          "order": 5,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_34bd837a6bbb4b7f",
+          "d": "M90 270 L90 280",
+          "order": 6,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_a71be67f0c254236",
+          "d": "M120 130 L240 130",
+          "order": 7,
+          "length": 120,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_e071b0fd15644a89",
+          "d": "M120 170 L240 170",
+          "order": 8,
+          "length": 120,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_547db49866534dc7",
+          "d": "M120 210 L240 210",
+          "order": 9,
+          "length": 120,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_4fd0b4dcd8684d8c",
+          "d": "M120 250 L240 250",
+          "order": 10,
+          "length": 120,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_c524eca57bf54c33",
+          "d": "M120 290 L240 290",
+          "order": 11,
+          "length": 120,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_1f991e6ea1ae4fef",
+          "d": "M200 60 L180 340 L370 350 L390 70 Z",
+          "order": 12,
+          "length": 941.952705713537,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_8543d499b9d9430f",
+          "d": "M220 65 L200 345",
+          "order": 13,
+          "length": 280.713376952364,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_1cd7992af91a4355",
+          "d": "M210 105 L208 115",
+          "order": 14,
+          "length": 10.198039027185569,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_6ac92070ad094ea4",
+          "d": "M205 155 L203 165",
+          "order": 15,
+          "length": 10.198039027185569,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_7e116632c3ca4fe3",
+          "d": "M200 205 L198 215",
+          "order": 16,
+          "length": 10.198039027185569,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_5332c72753f04022",
+          "d": "M195 255 L193 265",
+          "order": 17,
+          "length": 10.198039027185569,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_13cbe5f88b714230",
+          "d": "M190 305 L188 315",
+          "order": 18,
+          "length": 10.198039027185569,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_8163f80a4fcd4bd5",
+          "d": "M240 110 L350 118",
+          "order": 19,
+          "length": 110.2905254316979,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_f2f9824474f34d23",
+          "d": "M235 160 L345 168",
+          "order": 20,
+          "length": 110.2905254316979,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_5b55bb25c3da48ce",
+          "d": "M230 210 L340 218",
+          "order": 21,
+          "length": 110.2905254316979,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_94bcc6730bb2424b",
+          "d": "M225 260 L335 268",
+          "order": 22,
+          "length": 110.2905254316979,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_030a2b2abfc84663",
+          "d": "M220 310 L330 318",
+          "order": 23,
+          "length": 110.2905254316979,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_d960d3e390844105",
+          "d": "M300 100 L300 360 L480 360 L480 100 Z",
+          "order": 24,
+          "length": 880,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_351aac730d954378",
+          "d": "M320 100 L320 360",
+          "order": 25,
+          "length": 260,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_d16387a93ba84a64",
+          "d": "M310 130 L310 140",
+          "order": 26,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_a89684da16314c0f",
+          "d": "M310 170 L310 180",
+          "order": 27,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_95cb4d68e7e94a50",
+          "d": "M310 210 L310 220",
+          "order": 28,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_84b16ec878144710",
+          "d": "M310 250 L310 260",
+          "order": 29,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_62fedd533d2d4c21",
+          "d": "M310 290 L310 300",
+          "order": 30,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_dd02b15159d94a3d",
+          "d": "M310 330 L310 340",
+          "order": 31,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_ba9c1f6c4fa44e10",
+          "d": "M340 150 L460 150",
+          "order": 32,
+          "length": 120,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_477629d1ea27440e",
+          "d": "M340 190 L460 190",
+          "order": 33,
+          "length": 120,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_c6d61c9f9db8407f",
+          "d": "M340 230 L460 230",
+          "order": 34,
+          "length": 120,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_b6a5637248cd41ed",
+          "d": "M340 270 L460 270",
+          "order": 35,
+          "length": 120,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_b8b22e6976e648cd",
+          "d": "M340 310 L460 310",
+          "order": 36,
+          "length": 120,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_774c9084f1574138",
+          "d": "M340 350 L460 350",
+          "order": 37,
+          "length": 120,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        }
+      ],
+      "accentColor": "#f97316",
+      "promptHash": "394e549e61b4653316de3521a5db0b68a523c1ba57d72a32ef19ca6613bf9a9e",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_bd3a9fd96e4844e7",
+      "name": "network arrows",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 500,
+        "height": 300
+      },
+      "paths": [
+        {
+          "id": "pth_3a8e7c201798432b",
+          "d": "M50 150 L120 150",
+          "order": 0,
+          "length": 70,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_1ae50e7fe6ab433f",
+          "d": "M120 150 L120 90 L180 90",
+          "order": 1,
+          "length": 120,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_5d14c63054514c4f",
+          "d": "M120 150 L120 210 L180 210",
+          "order": 2,
+          "length": 120,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_fb4e4127e59b43b7",
+          "d": "M380 150 L450 150",
+          "order": 3,
+          "length": 70,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_7931beaadf804f1d",
+          "d": "M380 90 L320 90",
+          "order": 4,
+          "length": 60,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_7c99620408544c48",
+          "d": "M380 210 L320 210",
+          "order": 5,
+          "length": 60,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_b342d85bfbe04e3a",
+          "d": "M250 150 L250 90",
+          "order": 6,
+          "length": 60,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_f9f949939cf14642",
+          "d": "M250 150 L250 210",
+          "order": 7,
+          "length": 60,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_2206e71f89af414a",
+          "d": "M185 90 L215 90",
+          "order": 8,
+          "length": 30,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_56c325e5a6454622",
+          "d": "M215 90 L205 80",
+          "order": 9,
+          "length": 14.142135623730951,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_74cdc099c6864ee4",
+          "d": "M215 90 L205 100",
+          "order": 10,
+          "length": 14.142135623730951,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_4fa2b48622e049b8",
+          "d": "M285 210 L315 210",
+          "order": 11,
+          "length": 30,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_2af4352dd9b247ac",
+          "d": "M315 210 L305 200",
+          "order": 12,
+          "length": 14.142135623730951,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_7d1895e3acb340a7",
+          "d": "M315 210 L305 220",
+          "order": 13,
+          "length": 14.142135623730951,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_486b9396f4f740f4",
+          "d": "M185 210 L215 210",
+          "order": 14,
+          "length": 30,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_916959632e3640d0",
+          "d": "M215 210 L205 200",
+          "order": 15,
+          "length": 14.142135623730951,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_49530798542b4b3a",
+          "d": "M215 210 L205 220",
+          "order": 16,
+          "length": 14.142135623730951,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_b1b0533d79114f92",
+          "d": "M285 90 L315 90",
+          "order": 17,
+          "length": 30,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_c63bffa4f87d4edc",
+          "d": "M315 90 L305 80",
+          "order": 18,
+          "length": 14.142135623730951,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_56f23a06455d4b99",
+          "d": "M315 90 L305 100",
+          "order": 19,
+          "length": 14.142135623730951,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        }
+      ],
+      "accentColor": "#f97316",
+      "promptHash": "d54d5b0e38397c62138e155e796995b9c04996c7dfd3cacc63acc2f1feab096c",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_1cb2b4ea781340c7",
+      "name": "identical copies",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 400,
+        "height": 200
+      },
+      "paths": [
+        {
+          "id": "pth_a6ce5afe50ee4313",
+          "d": "M80 40 L80 160",
+          "order": 0,
+          "length": 120,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_060b5adee9134f5a",
+          "d": "M80 40 L140 80 L140 160",
+          "order": 1,
+          "length": 152.11102550927978,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_d1d6522b07c943e5",
+          "d": "M80 100 L140 100",
+          "order": 2,
+          "length": 60,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_bd2aae8e383249a4",
+          "d": "M80 160 L140 160",
+          "order": 3,
+          "length": 60,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_25fdb5dc3be545f7",
+          "d": "M260 40 L260 160",
+          "order": 4,
+          "length": 120,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_a380ac9736b8494e",
+          "d": "M260 40 L320 80 L320 160",
+          "order": 5,
+          "length": 152.11102550927978,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_3b52cf556337418b",
+          "d": "M260 100 L320 100",
+          "order": 6,
+          "length": 60,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_d3b1d47aafa041ac",
+          "d": "M260 160 L320 160",
+          "order": 7,
+          "length": 60,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_364a47ec816f42c6",
+          "d": "M180 80 L220 80",
+          "order": 8,
+          "length": 40,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_ca777b6031f443de",
+          "d": "M180 120 L220 120",
+          "order": 9,
+          "length": 40,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        }
+      ],
+      "accentColor": "#f97316",
+      "promptHash": "70c63f6ac99c2e24523cc238c5dca17c5f047fbbbaeec539ca9788de49756f9b",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_c5e8ffe823c74557",
+      "name": "person sending coin",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 400,
+        "height": 300
+      },
+      "paths": [
+        {
+          "id": "pth_a529e0cc00974a85",
+          "d": "M200 120 L200 220",
+          "order": 0,
+          "length": 100,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_b067e87a688a41e0",
+          "d": "M200 80 A40 40 0 1 0 200 160 A40 40 0 1 0 200 80",
+          "order": 1,
+          "length": 251.32626390813982,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_caa24cca5f104df5",
+          "d": "M200 150 L150 190",
+          "order": 2,
+          "length": 64.03124237432849,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_5ba8263f18b649d7",
+          "d": "M200 150 L260 130",
+          "order": 3,
+          "length": 63.245553203367585,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_7447ddaad9f14092",
+          "d": "M200 220 L160 280",
+          "order": 4,
+          "length": 72.11102550927978,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_335d2d9d871a41eb",
+          "d": "M200 220 L240 280",
+          "order": 5,
+          "length": 72.11102550927978,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_0453e26e02ad40d7",
+          "d": "M290 100 A30 30 0 1 0 290 160 A30 30 0 1 0 290 100",
+          "order": 6,
+          "length": 188.4946979311049,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_74e8a3d0ab384f65",
+          "d": "M280 130 L300 130 M290 120 L290 140",
+          "order": 7,
+          "length": 40,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_f2ce7076351345d8",
+          "d": "M260 130 Q275 115 290 120",
+          "order": 8,
+          "length": 33.46201669604682,
+          "strokeWidth": 6,
+          "stroke": "#111111",
+          "fill": null
+        }
+      ],
+      "accentColor": "#f97316",
+      "promptHash": "df0a12ae727db2ea47680ca5708318e7d4b1cb44d9834271c90a8b3acf405edd",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_d4b0473d0e414d81",
+      "name": "miner with magnifying glass",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 400,
+        "height": 500
+      },
+      "paths": [
+        {
+          "id": "pth_02c73791d2e44cbf",
+          "d": "M120 180 Q120 120 200 110 Q280 120 280 180",
+          "order": 0,
+          "length": 236.50614551472057,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_f179c6ca52254321",
+          "d": "M100 180 Q200 195 300 180",
+          "order": 1,
+          "length": 200.74748887075518,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_212da32dcd7e43c1",
+          "d": "M160 190 Q160 240 200 250 Q240 240 240 190",
+          "order": 2,
+          "length": 157.51361615097957,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_10169f75c6d94d40",
+          "d": "M180 215 Q185 210 190 215",
+          "order": 3,
+          "length": 11.47793574696319,
+          "strokeWidth": 6,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_9b151075a7e74acd",
+          "d": "M210 215 Q215 210 220 215",
+          "order": 4,
+          "length": 11.47793574696319,
+          "strokeWidth": 6,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_dee295e8831f456c",
+          "d": "M185 235 Q200 245 215 235",
+          "order": 5,
+          "length": 32.09352151545432,
+          "strokeWidth": 5,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_74530a8394124d62",
+          "d": "M170 260 L165 380",
+          "order": 6,
+          "length": 120.10412149464314,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_b6b55b42b58c47fc",
+          "d": "M230 260 L235 380",
+          "order": 7,
+          "length": 120.10412149464314,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_5a86aa4e44244e7e",
+          "d": "M170 260 L230 260 L235 380 L165 380 Z",
+          "order": 8,
+          "length": 370.2082429892863,
+          "strokeWidth": 6,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_bbc6a15a4ec84a2a",
+          "d": "M170 290 L120 330 L100 370",
+          "order": 9,
+          "length": 108.75260192432428,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_82bb3c89f3f3417c",
+          "d": "M230 290 L270 320 L280 350",
+          "order": 10,
+          "length": 81.6227766016838,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_2d5241af9cd04f27",
+          "d": "M175 380 L160 460",
+          "order": 11,
+          "length": 81.39410298049853,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_80e50a2a8ae64dbb",
+          "d": "M225 380 L240 460",
+          "order": 12,
+          "length": 81.39410298049853,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_815629d2515b4543",
+          "d": "M145 460 L160 460 L175 460",
+          "order": 13,
+          "length": 30,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_56672c45e07640f2",
+          "d": "M225 460 L240 460 L255 460",
+          "order": 14,
+          "length": 30,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_70c506115f694cb8",
+          "d": "M100 370 L80 420",
+          "order": 15,
+          "length": 53.85164807134504,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_e61bf7738fea4a04",
+          "d": "M70 310 Q60 310 60 320 Q60 350 70 360 Q80 370 90 360 Q100 350 100 320 Q100 310 90 310 Z",
+          "order": 16,
+          "length": 159.73375913404902,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_e81abca711314fd4",
+          "d": "M75 330 L85 340",
+          "order": 17,
+          "length": 14.142135623730951,
+          "strokeWidth": 4,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_552cc66927c44dec",
+          "d": "M85 330 L75 340",
+          "order": 18,
+          "length": 14.142135623730951,
+          "strokeWidth": 4,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_60dcc045b0574d7a",
+          "d": "M270 320 L310 280",
+          "order": 19,
+          "length": 56.568542494923804,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_006bdbb93a854548",
+          "d": "M310 280 L330 260",
+          "order": 20,
+          "length": 28.284271247461902,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_0fb9aee167de437f",
+          "d": "M310 280 L330 300",
+          "order": 21,
+          "length": 28.284271247461902,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        }
+      ],
+      "accentColor": "#f97316",
+      "promptHash": "f2f562c409e84fe863a9ad362cf1a714a02b740a6226f0219c2a5f29b6462f59",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_c46c38aa5a2d4025",
+      "name": "block with coin inside",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 200,
+        "height": 200
+      },
+      "paths": [
+        {
+          "id": "pth_8730ed8f00fb4a26",
+          "d": "M40 60 L160 60 L180 80 L180 160 L160 180 L40 180 L20 160 L20 80 Z",
+          "order": 0,
+          "length": 513.1370849898476,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_ca1b16b308b14dd7",
+          "d": "M40 60 L60 40 L180 40 L180 80 L160 60 L40 60",
+          "order": 1,
+          "length": 336.5685424949238,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_9658de9ea28747ef",
+          "d": "M180 80 L160 60",
+          "order": 2,
+          "length": 28.284271247461902,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_3f714e7b3ec74f70",
+          "d": "M100 100 A30 30 0 1 1 100 160 A30 30 0 1 1 100 100",
+          "order": 3,
+          "length": 188.49469793110484,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_2c83cc05c38a4707",
+          "d": "M100 110 A20 20 0 1 1 100 150 A20 20 0 1 1 100 110",
+          "order": 4,
+          "length": 125.66313195406991,
+          "strokeWidth": 6,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_ee7c42d24f064a0f",
+          "d": "M100 115 L100 145 M95 120 L105 120 M95 140 L105 140",
+          "order": 5,
+          "length": 50,
+          "strokeWidth": 6,
+          "stroke": "#f97316",
+          "fill": null
+        }
+      ],
+      "accentColor": "#f97316",
+      "promptHash": "0b4d3a5bba2eae45e8d4a506ec58e71bf40162d8d8571cd6326bf46dc8b23e2f",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_d1553be44486461a",
+      "name": "block with hash label",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 200,
+        "height": 200
+      },
+      "paths": [
+        {
+          "id": "pth_05f70fc000554f54",
+          "d": "M40 60 L160 60 L180 80 L180 160 L160 180 L40 180 L20 160 L20 80 Z",
+          "order": 0,
+          "length": 513.1370849898476,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_fd8a357363414a67",
+          "d": "M40 60 L60 40 L180 40 L200 60 L180 80 L160 60 L60 60 L40 60 Z",
+          "order": 1,
+          "length": 353.1370849898476,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_baddd040e70b4990",
+          "d": "M180 80 L200 60 L200 140 L180 160 Z",
+          "order": 2,
+          "length": 216.5685424949238,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_7c0ec273674e4859",
+          "d": "M80 80 L80 160",
+          "order": 3,
+          "length": 80,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_a41cf39e24124194",
+          "d": "M120 80 L120 160",
+          "order": 4,
+          "length": 80,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_6f6645e4ba834b09",
+          "d": "M60 100 L140 100",
+          "order": 5,
+          "length": 80,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_634249db19cc4456",
+          "d": "M60 140 L140 140",
+          "order": 6,
+          "length": 80,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        }
+      ],
+      "accentColor": "#f97316",
+      "promptHash": "f1bec8fc65ac6f3161d8024235d40df17adcebb1643f9f0ff31c8366110be06d",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_bf3a3bb55ea441b2",
+      "name": "eraser",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 200,
+        "height": 200
+      },
+      "paths": [
+        {
+          "id": "pth_59aced81f95c4557",
+          "d": "M40 160 L160 160",
+          "order": 0,
+          "length": 120,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_960b4b3528dc4f7f",
+          "d": "M50 160 L50 80 Q50 50 80 50 L120 50 Q150 50 150 80 L150 160",
+          "order": 1,
+          "length": 297.3935144084138,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_3e247451a20b4232",
+          "d": "M50 80 L150 80",
+          "order": 2,
+          "length": 100,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_521e00b15e9d44a4",
+          "d": "M50 100 L150 100",
+          "order": 3,
+          "length": 100,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_4d62c8f183bf4691",
+          "d": "M50 120 L150 120",
+          "order": 4,
+          "length": 100,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_f7022d1c199c457c",
+          "d": "M50 140 L150 140",
+          "order": 5,
+          "length": 100,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_431c189c27ee4eed",
+          "d": "M80 50 L80 30 Q80 20 90 20 L110 20 Q120 20 120 30 L120 50",
+          "order": 6,
+          "length": 92.46450480280461,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_1d73dc63008b4c64",
+          "d": "M90 20 L90 40",
+          "order": 7,
+          "length": 20,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_410b779db2a84fd9",
+          "d": "M110 20 L110 40",
+          "order": 8,
+          "length": 20,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_e83c41471c244c52",
+          "d": "M95 30 L105 30",
+          "order": 9,
+          "length": 10,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        }
+      ],
+      "accentColor": "#f97316",
+      "promptHash": "892dd8db36996b9e4d7dc7a5c15f58caa3378bcee6b92e34b84cc00b02854a85",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_b29b79fd96fb4538",
+      "name": "broken chain with red X",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 400,
+        "height": 300
+      },
+      "paths": [
+        {
+          "id": "pth_9fe7381b21a745a3",
+          "d": "M80 120 Q60 90 80 70 Q100 50 120 70 Q140 90 120 120",
+          "order": 0,
+          "length": 155.88463201862848,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_65937e46d69c4a07",
+          "d": "M80 120 Q60 150 80 170 Q100 190 120 170 Q140 150 120 120",
+          "order": 1,
+          "length": 155.88463201862848,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_dc044f92bac240d2",
+          "d": "M120 70 Q150 50 170 70 Q190 90 170 110",
+          "order": 2,
+          "length": 100.89818750324062,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_af1e6775c75642ab",
+          "d": "M280 100 Q260 70 280 50 Q300 30 320 50 Q340 70 320 100",
+          "order": 3,
+          "length": 155.88463201862848,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_cadcf6969ff74e25",
+          "d": "M280 100 Q260 130 280 150 Q300 170 320 150 Q340 130 320 100",
+          "order": 4,
+          "length": 155.88463201862848,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_bebca81f0b9444cf",
+          "d": "M320 50 Q350 30 370 50 Q390 70 370 90",
+          "order": 5,
+          "length": 100.89818750324062,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_9a32fbb945a743d7",
+          "d": "M170 110 L190 130",
+          "order": 6,
+          "length": 28.284271247461902,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_ad7c3ee3eaa041fc",
+          "d": "M280 100 L260 120",
+          "order": 7,
+          "length": 28.284271247461902,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_ca6a12c5a27349a4",
+          "d": "M200 100 L240 140",
+          "order": 8,
+          "length": 56.568542494923804,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_032facebbb6d440b",
+          "d": "M240 100 L200 140",
+          "order": 9,
+          "length": 56.568542494923804,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        }
+      ],
+      "accentColor": "#f97316",
+      "promptHash": "d418e44f849939612fa6528fa0689166907db07171e44f5b342a1e0ed93517e4",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_879839ecdc4f496f",
+      "name": "glowing blockchain network",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 400,
+        "height": 400
+      },
+      "paths": [
+        {
+          "id": "pth_aa7716d503d74d3b",
+          "d": "M200 40 L320 120 L320 280 L200 360 L80 280 L80 120 Z",
+          "order": 0,
+          "length": 896.8882040742383,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_36cd189536ca473c",
+          "d": "M200 40 L200 360",
+          "order": 1,
+          "length": 320,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_4e272afc83994eaa",
+          "d": "M80 120 L320 280",
+          "order": 2,
+          "length": 288.44410203711914,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_450c1865bdb64fcc",
+          "d": "M320 120 L80 280",
+          "order": 3,
+          "length": 288.44410203711914,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        }
+      ],
+      "accentColor": "#f97316",
+      "promptHash": "028c52b5c94f615b1fe96452565c31f5538c74dd7a48410931fcb18f62270f14",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_c4164710dd674745",
+      "name": "Bitcoin symbol",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 200,
+        "height": 200
+      },
+      "paths": [
+        {
+          "id": "pth_bf4968d46d0644d2",
+          "d": "M100 30 C58 30 30 58 30 100 C30 142 58 170 100 170 C142 170 170 142 170 100 C170 58 142 30 100 30",
+          "order": 0,
+          "length": 445.8119092624645,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_103a2aad95634fe4",
+          "d": "M80 60 L80 140",
+          "order": 1,
+          "length": 80,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_a89fbef6e03a4b9f",
+          "d": "M80 60 C95 60 120 65 120 85 C120 100 105 105 80 105",
+          "order": 2,
+          "length": 102.51474247243517,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_61efb24e543f453f",
+          "d": "M80 105 C100 105 130 110 130 135 C130 150 110 140 80 140",
+          "order": 3,
+          "length": 120.36457832906987,
+          "strokeWidth": 8,
+          "stroke": "#f97316",
+          "fill": null
+        },
+        {
+          "id": "pth_380589e434f647a2",
+          "d": "M95 70 L95 130",
+          "order": 4,
+          "length": 60,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_bd7acc1d4364461d",
+          "d": "M110 75 L110 125",
+          "order": 5,
+          "length": 50,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        }
+      ],
+      "accentColor": "#f97316",
+      "promptHash": "8ecd19b597dc36dc8cea42c52dedbeba2b32729feb5dbcb9fcf8226be6eb3eaa",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_085c892e557a47d7",
+      "name": "checkmark",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 200,
+        "height": 200
+      },
+      "paths": [
+        {
+          "id": "pth_7d3b1749b1e04742",
+          "d": "M30 110 L80 160 L170 50",
+          "order": 0,
+          "length": 212.8373821541737,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        }
+      ],
+      "accentColor": "#f97316",
+      "promptHash": "f2f593888eaa018fa036ae19f8cbf22d3edb61fb8923f7f3dde5fc5c78ea0d49",
+      "styleVersion": 1
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens — a restrained, premium dark theme (Linear/Raycast register):
+ * near-black surfaces, one accent, lots of whitespace, hairline borders.
+ */
+@theme {
+  --color-bg: #09090b;
+  --color-surface: #131316;
+  --color-surface-2: #1a1a1f;
+  --color-border: #26262c;
+  --color-muted: #8b8b95;
+  --color-fg: #f5f5f7;
+  --color-accent: #f97316;
+  --color-accent-soft: #f9731622;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --radius: 0.75rem;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* A quiet dotted grid for empty canvas areas. */
+.bg-grid {
+  background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+::selection {
+  background: var(--color-accent-soft);
+}
+
+/* Minimal, unobtrusive scrollbars. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}

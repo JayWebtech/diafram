@@ -1,0 +1,31 @@
+{
+  "name": "@diafram/render",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Explainer out/explainer.mp4",
+    "still": "remotion still src/index.ts Explainer out/frame.png",
+    "worker": "tsx src/service/server.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@diafram/engine": "workspace:*",
+    "@diafram/renderer": "workspace:*",
+    "@diafram/schema": "workspace:*",
+    "@remotion/bundler": "^4.0.0",
+    "@remotion/cli": "^4.0.0",
+    "@remotion/renderer": "^4.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}
