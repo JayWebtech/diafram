@@ -42,7 +42,14 @@ async function buildLibrary(): Promise<IllustrationSource> {
 }
 
 export async function createDefaultIllustrationSource(llm: LlmPort): Promise<IllustrationSource> {
-  cachedLibrary ??= buildLibrary();
+  // Cache the (expensive) library build, but don't persist a failure — reset on
+  // reject so a transient error doesn't poison the process.
+  if (!cachedLibrary) {
+    cachedLibrary = buildLibrary().catch((err) => {
+      cachedLibrary = null;
+      throw err;
+    });
+  }
   const library = await cachedLibrary;
   return new ChainedIllustrationSource([
     new PeopleIllustrationSource(),

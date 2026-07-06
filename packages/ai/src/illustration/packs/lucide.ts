@@ -1,6 +1,6 @@
-import { readFileSync, readdirSync } from "node:fs";
-import { createRequire } from "node:module";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import type { LibraryEntry } from "../starter-pack";
 
 /**
@@ -9,10 +9,41 @@ import type { LibraryEntry } from "../starter-pack";
  * come for free. Missing files (Lucide renames across versions) are skipped, so
  * the curated list is resilient.
  */
+/**
+ * Locate the lucide-static icons directory by walking `node_modules` up from the
+ * running app's cwd (and this module's location).
+ *
+ * Deliberately NOT using `require.resolve`/`createRequire`: a bundler (Next)
+ * rewrites and breaks those in the server bundle. A plain filesystem walk is
+ * bundler-proof. `lucide-static` is a direct dependency of the apps that run the
+ * pipeline, so `<app>/node_modules/lucide-static/icons` resolves.
+ */
 function lucideIconDir(): string {
-  const require = createRequire(import.meta.url);
-  const pkg = require.resolve("lucide-static/package.json");
-  return join(dirname(pkg), "icons");
+  const candidates: string[] = [];
+  const walkUp = (start: string) => {
+    let dir = start;
+    for (let i = 0; i < 8; i++) {
+      candidates.push(join(dir, "node_modules", "lucide-static", "icons"));
+      const parent = dirname(dir);
+      if (parent === dir) break;
+      dir = parent;
+    }
+  };
+
+  walkUp(process.cwd());
+  try {
+    walkUp(dirname(fileURLToPath(import.meta.url)));
+  } catch {
+    // import.meta.url unavailable in this context — cwd walk is enough.
+  }
+
+  for (const dir of candidates) {
+    if (existsSync(dir)) return dir;
+  }
+
+  throw new Error(
+    "Could not locate the lucide-static icons directory. Ensure `lucide-static` is a dependency of the running app.",
+  );
 }
 
 export interface LucideSpec {
