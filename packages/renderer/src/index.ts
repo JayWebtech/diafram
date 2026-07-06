@@ -11,5 +11,6 @@ export * from "./geometry";
 export * from "./transitions";
 export * from "./DrawPath";
 export * from "./IllustrationLayer";
+export * from "./TextElement";
 export * from "./SceneRenderer";
 export * from "./VideoComposition";

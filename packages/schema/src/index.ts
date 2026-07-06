@@ -12,6 +12,7 @@ export * from "./ids";
 export * from "./illustration";
 export * from "./camera";
 export * from "./layer";
+export * from "./text";
 export * from "./scene";
 export * from "./project";
 export * from "./storyboard";

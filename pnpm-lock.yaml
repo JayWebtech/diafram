@@ -220,6 +220,9 @@ importers:
       '@diafram/schema':
         specifier: workspace:*
         version: link:../schema
+      '@remotion/google-fonts':
+        specifier: ^4.0.0
+        version: 4.0.485(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
     devDependencies:
       '@types/node':
         specifier: ^20
@@ -1056,6 +1059,9 @@ packages:
     resolution: {integrity: sha512-MxTN7uCZ5zD+X7TaaYfAR4ewtH9BZ7Wh5xS+oRJ72XbNHV/d+nULtOG3VdphFo/HhaPRzTYO9i/sZjogE+In/g==}
     cpu: [x64]
     os: [win32]
+
+  '@remotion/google-fonts@4.0.485':
+    resolution: {integrity: sha512-h3mwgLzaHZUhPSjD6Gm2R99+hKlO1M9SpWN3k1stECHz+NSli/CTQK0b3/VtpMIIK4muuifDoon2Arhq1sP4Xw==}
 
   '@remotion/licensing@4.0.484':
     resolution: {integrity: sha512-YtiERD4bC3n5yQtNgEZasdZXqDKjIJssjKDLL+YjGDU3mMcw/93my83UU6jJVCB7TBrIms8DVbCgqt4hhU8kMA==}
@@ -2533,6 +2539,12 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
+  remotion@4.0.485:
+    resolution: {integrity: sha512-gZyjdafaXgRurq3rZCSKfEx9S2Aef45b/FvEU90PTL9gsJpzVK+yz0Jhi/jNefgadowFqdPLLdZyGBMjY2jk3g==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
   rename-keys@1.2.0:
     resolution: {integrity: sha512-U7XpAktpbSgHTRSNRrjKSrjYkZKuhUukfoBlXWXUExCAqhzh1TU3BDRAfJmarcl5voKS+pbKU9MvyLWKZ4UEEg==}
     engines: {node: '>= 0.8.0'}
@@ -3682,6 +3694,13 @@ snapshots:
 
   '@remotion/compositor-win32-x64-msvc@4.0.484':
     optional: true
+
+  '@remotion/google-fonts@4.0.485(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+    dependencies:
+      remotion: 4.0.485(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+    transitivePeerDependencies:
+      - react
+      - react-dom
 
   '@remotion/licensing@4.0.484': {}
 
@@ -5155,6 +5174,11 @@ snapshots:
       tslib: 2.8.1
 
   remotion@4.0.484(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
+    dependencies:
+      react: 19.2.7
+      react-dom: 19.2.7(react@19.2.7)
+
+  remotion@4.0.485(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
     dependencies:
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)

@@ -2,8 +2,16 @@ import { z } from "zod";
 import { CANVAS_HEIGHT, CANVAS_WIDTH, DEFAULT_FPS, SCHEMA_VERSION } from "./constants";
 import { zProjectId } from "./ids";
 import { zIllustration } from "./illustration";
-import { zHexColor } from "./primitives";
+import { zHexColor, zNormalized } from "./primitives";
 import { zScene } from "./scene";
+
+/** Looping background music played (quietly) under the whole video. */
+export const zBackgroundMusic = z.object({
+  /** Audio source — data URI or URL. */
+  url: z.string(),
+  volume: zNormalized.default(0.12),
+});
+export type BackgroundMusic = z.infer<typeof zBackgroundMusic>;
 
 /**
  * `VideoProject` — the top-level contract.
@@ -28,6 +36,9 @@ export const zVideoProject = z
 
     /** Optional project-wide accent color, inherited by illustrations that omit one. */
     accentColor: zHexColor.nullable().default(null),
+
+    /** Optional looping background music under the whole video. */
+    backgroundMusic: zBackgroundMusic.nullable().default(null),
 
     scenes: z.array(zScene).min(1, "A project needs at least one scene"),
 

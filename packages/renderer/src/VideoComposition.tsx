@@ -1,7 +1,7 @@
 import type { Illustration, VideoProject } from "@diafram/schema";
 import { compileTimeline } from "@diafram/engine";
 import { useMemo } from "react";
-import { AbsoluteFill, Sequence } from "remotion";
+import { AbsoluteFill, Audio, Sequence } from "remotion";
 import { SceneRenderer } from "./SceneRenderer";
 
 /**
@@ -31,6 +31,13 @@ export function VideoComposition({ project, background = "#ffffff" }: VideoCompo
 
   return (
     <AbsoluteFill style={{ backgroundColor: background }}>
+      {project.backgroundMusic ? (
+        <Audio
+          loop
+          src={project.backgroundMusic.url}
+          volume={project.backgroundMusic.volume}
+        />
+      ) : null}
       {timeline.scenes.map((compiled) => (
         <Sequence
           key={compiled.scene.id}
@@ -38,6 +45,9 @@ export function VideoComposition({ project, background = "#ffffff" }: VideoCompo
           durationInFrames={compiled.durationInFrames}
           premountFor={premountFor}
         >
+          {compiled.scene.narrationAudioUrl ? (
+            <Audio src={compiled.scene.narrationAudioUrl} />
+          ) : null}
           <SceneRenderer
             scene={compiled.scene}
             illustrations={illustrations}

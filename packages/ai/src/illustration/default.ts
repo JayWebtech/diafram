@@ -25,7 +25,10 @@ let cachedLibrary: Promise<IllustrationSource> | null = null;
 async function buildLibrary(): Promise<IllustrationSource> {
   const pack = loadAllLucide();
 
-  if (process.env.DIAFRAM_EMBEDDINGS !== "off") {
+  // Semantic retrieval is opt-in (`DIAFRAM_EMBEDDINGS=on`): the local embedding
+  // stack has native deps (sharp/onnxruntime) that aren't built in every
+  // environment. Lexical retrieval is the robust default.
+  if (process.env.DIAFRAM_EMBEDDINGS === "on") {
     try {
       const embedder = createTransformersEmbedder();
       return await createLibraryIllustrationSource(pack, {

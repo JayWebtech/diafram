@@ -5,6 +5,8 @@ import { makeIllustration, makeVideoProject } from "./fixtures";
 import { zHexColor, zTransform } from "./primitives";
 import { projectDurationInFrames, zVideoProject } from "./project";
 import { zScene } from "./scene";
+import { zTextElement } from "./text";
+import { newTextId } from "./ids";
 import { secondsToFrames, viewBoxToString } from "./helpers";
 
 describe("primitives", () => {
@@ -98,6 +100,42 @@ describe("scene invariants", () => {
         ],
         shake: null,
       },
+    };
+    expect(zScene.safeParse(scene).success).toBe(false);
+  });
+});
+
+describe("text element", () => {
+  it("applies reveal/align/weight defaults", () => {
+    const text = zTextElement.parse({
+      id: newTextId(),
+      content: "Hello",
+      x: 960,
+      y: 120,
+      fontSize: 72,
+    });
+    expect(text.reveal).toBe("fade");
+    expect(text.align).toBe("center");
+    expect(text.fontWeight).toBe(600);
+    expect(text.color).toBe("#111111");
+  });
+
+  it("rejects empty content and non-positive font size", () => {
+    expect(zTextElement.safeParse({ id: newTextId(), content: "", x: 0, y: 0, fontSize: 40 }).success).toBe(false);
+    expect(zTextElement.safeParse({ id: newTextId(), content: "x", x: 0, y: 0, fontSize: 0 }).success).toBe(false);
+  });
+
+  it("rejects text starting after the scene ends", () => {
+    const scene = {
+      id: "scn_test000000000",
+      name: "Test",
+      durationInFrames: 100,
+      transitionIn: "cut",
+      camera: { keyframes: [{ frame: 0, x: 0, y: 0, scale: 1, rotation: 0, easing: "linear" }], shake: null },
+      layers: [],
+      texts: [{ id: newTextId(), content: "late", x: 0, y: 0, fontSize: 40, startFrame: 150 }],
+      narration: "",
+      notes: "",
     };
     expect(zScene.safeParse(scene).success).toBe(false);
   });

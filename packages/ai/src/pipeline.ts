@@ -7,6 +7,8 @@ import type { IllustrationSource } from "./illustration/source";
 import type { IllustrationLibrary } from "./library";
 import { InMemoryIllustrationLibrary } from "./library";
 import type { LlmPort } from "./llm/port";
+import { synthesizeNarration } from "./tts/narration";
+import type { TtsPort } from "./tts/port";
 
 /**
  * The end-to-end generation pipeline: prompt → storyboard → artwork → project.
@@ -22,6 +24,8 @@ export interface GeneratePipelineOptions {
   llm: LlmPort;
   /** Override the art source (default: library + LLM fallback). */
   source?: IllustrationSource;
+  /** Optional narration synthesis. When omitted, the video has no voice. */
+  tts?: TtsPort | null;
   /** Reuse cache keyed by brief hash. */
   library?: IllustrationLibrary;
   prompt: string;
@@ -45,6 +49,7 @@ export async function generateVideoProject(
   const project = await generateProjectFromStoryboard({
     llm: options.llm,
     source: options.source,
+    tts: options.tts,
     library: options.library,
     storyboard,
     title: options.prompt,
@@ -57,6 +62,7 @@ export async function generateVideoProject(
 export interface ProjectFromStoryboardOptions {
   llm: LlmPort;
   source?: IllustrationSource;
+  tts?: TtsPort | null;
   library?: IllustrationLibrary;
   /** An approved (possibly human-edited) storyboard. */
   storyboard: Storyboard;
@@ -82,10 +88,15 @@ export async function generateProjectFromStoryboard(
     accentColor,
   );
 
+  const sceneNarration = options.tts
+    ? await synthesizeNarration(options.tts, options.storyboard)
+    : undefined;
+
   return compileProject({
     storyboard: options.storyboard,
     title: options.title,
     sceneIllustrations,
+    sceneNarration,
     accentColor,
   });
 }

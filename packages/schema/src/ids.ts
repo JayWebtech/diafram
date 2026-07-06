@@ -15,6 +15,7 @@ export const zSceneId = brandedId("SceneId");
 export const zLayerId = brandedId("LayerId");
 export const zIllustrationId = brandedId("IllustrationId");
 export const zPathId = brandedId("PathId");
+export const zTextId = brandedId("TextId");
 export const zStoryboardId = brandedId("StoryboardId");
 
 export type ProjectId = z.infer<typeof zProjectId>;
@@ -22,6 +23,7 @@ export type SceneId = z.infer<typeof zSceneId>;
 export type LayerId = z.infer<typeof zLayerId>;
 export type IllustrationId = z.infer<typeof zIllustrationId>;
 export type PathId = z.infer<typeof zPathId>;
+export type TextId = z.infer<typeof zTextId>;
 export type StoryboardId = z.infer<typeof zStoryboardId>;
 
 /**
@@ -40,4 +42,5 @@ export const newSceneId = () => zSceneId.parse(newId("scn"));
 export const newLayerId = () => zLayerId.parse(newId("lyr"));
 export const newIllustrationId = () => zIllustrationId.parse(newId("ill"));
 export const newPathId = () => zPathId.parse(newId("pth"));
+export const newTextId = () => zTextId.parse(newId("txt"));
 export const newStoryboardId = () => zStoryboardId.parse(newId("stb"));

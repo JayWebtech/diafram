@@ -3,6 +3,7 @@ import { dirname, join } from "node:path";
 import { writeFileSync } from "node:fs";
 import { projectDurationInFrames } from "@diafram/schema";
 import { createLlmPort, resolvePlatform } from "../src/llm/factory";
+import { createTtsPort } from "../src/tts/factory";
 import { generateVideoProject } from "../src/pipeline";
 import { loadEnv } from "./env";
 
@@ -15,11 +16,15 @@ async function main() {
   const prompt = process.argv[2] ?? "Explain blockchain to beginners";
   const env = loadEnv();
   const llm = createLlmPort(env);
+  const tts = createTtsPort(process.env);
 
-  console.log(`→ generating full project (${resolvePlatform(env)}) for: "${prompt}"`);
+  console.log(
+    `→ generating full project (${resolvePlatform(env)}${tts ? " + voice" : ""}) for: "${prompt}"`,
+  );
   const start = Date.now();
   const { storyboard, project } = await generateVideoProject({
     llm,
+    tts,
     prompt,
     accentColor: "#f97316",
   });

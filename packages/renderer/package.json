@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "@diafram/engine": "workspace:*",
-    "@diafram/schema": "workspace:*"
+    "@diafram/schema": "workspace:*",
+    "@remotion/google-fonts": "^4.0.0"
   },
   "peerDependencies": {
     "react": "^19.0.0",

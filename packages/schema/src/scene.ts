@@ -3,6 +3,7 @@ import { zCameraTrack } from "./camera";
 import { zSceneId } from "./ids";
 import { zLayer } from "./layer";
 import { zDurationFrames } from "./primitives";
+import { zTextElement } from "./text";
 
 /**
  * Scene-level transition into the scene.
@@ -24,8 +25,12 @@ export const zScene = z
     transitionIn: zSceneTransition.default("cut"),
     camera: zCameraTrack,
     layers: z.array(zLayer),
-    /** Narration text for this scene (voice generation is out of scope for now). */
+    /** On-canvas text (titles, captions, labels). */
+    texts: z.array(zTextElement).default([]),
+    /** Narration text for this scene (spoken via TTS when audio is enabled). */
     narration: z.string().default(""),
+    /** Synthesized narration audio (data URI or URL), played over the scene. */
+    narrationAudioUrl: z.string().nullable().default(null),
     /** Optional authoring notes, not rendered. */
     notes: z.string().default(""),
   })
@@ -38,6 +43,17 @@ export const zScene = z
           code: z.ZodIssueCode.custom,
           path: ["layers", i, "startFrame"],
           message: `Layer starts at frame ${layer.startFrame} but the scene is only ${scene.durationInFrames} frames long`,
+        });
+      }
+    });
+
+    // Text must start within the scene, same reasoning as layers.
+    scene.texts.forEach((text, i) => {
+      if (text.startFrame >= scene.durationInFrames) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          path: ["texts", i, "startFrame"],
+          message: `Text starts at frame ${text.startFrame} but the scene is only ${scene.durationInFrames} frames long`,
         });
       }
     });

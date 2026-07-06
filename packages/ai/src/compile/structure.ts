@@ -4,6 +4,7 @@ import {
   DEFAULT_FPS,
   newLayerId,
   newProjectId,
+  newTextId,
   secondsToFrames,
   zVideoProject,
   type Illustration,
@@ -22,11 +23,18 @@ import { cameraForIntent, layoutInRow } from "./layout";
  * bug surfaces as a schema error rather than a bad render).
  */
 
+export interface SceneNarrationInput {
+  audioDataUri: string;
+  durationSeconds: number;
+}
+
 export interface CompileOptions {
   storyboard: Storyboard;
   title: string;
   /** Illustrations for each scene, aligned to `storyboard.scenes` order. */
   sceneIllustrations: Illustration[][];
+  /** Optional narration audio per scene, aligned to scene order. */
+  sceneNarration?: Array<SceneNarrationInput | null>;
   fps?: number;
   width?: number;
   height?: number;
@@ -44,7 +52,18 @@ export function compileProject(options: CompileOptions): VideoProject {
 
   const scenes = options.storyboard.scenes.map((sbScene, sceneIndex) => {
     const illustrations = options.sceneIllustrations[sceneIndex] ?? [];
-    const durationInFrames = Math.max(2, secondsToFrames(sbScene.durationSeconds, fps));
+    const narration = options.sceneNarration?.[sceneIndex] ?? null;
+
+    // A scene lasts at least its storyboard length and, when narrated, long
+    // enough to finish speaking (plus a short tail).
+    const narrationFrames = narration
+      ? secondsToFrames(narration.durationSeconds + 0.6, fps)
+      : 0;
+    const durationInFrames = Math.max(
+      2,
+      secondsToFrames(sbScene.durationSeconds, fps),
+      narrationFrames,
+    );
 
     const layers = illustrations.map((illustration, i) => {
       uniqueIllustrations.set(illustration.id, illustration);
@@ -66,6 +85,22 @@ export function compileProject(options: CompileOptions): VideoProject {
       };
     });
 
+    // The scene title as a typewritten caption across the top, clear of the
+    // centered illustration row.
+    const titleText = {
+      id: newTextId(),
+      content: sbScene.title,
+      x: width / 2,
+      y: Math.round(height * 0.12),
+      fontSize: Math.round(height * 0.07),
+      fontWeight: 600,
+      color: "#111111",
+      align: "center" as const,
+      startFrame: 0,
+      revealDurationInFrames: Math.max(8, Math.round(0.7 * fps)),
+      reveal: "typewriter" as const,
+    };
+
     return {
       id: `scn_${sbScene.index}_${sbScene.title.slice(0, 8)}`.replace(/[^\w]/g, "_"),
       name: sbScene.title,
@@ -74,6 +109,8 @@ export function compileProject(options: CompileOptions): VideoProject {
       narration: sbScene.narration,
       camera: cameraForIntent(sbScene.cameraIntent, durationInFrames, width, sceneIndex + 1),
       layers,
+      texts: [titleText],
+      narrationAudioUrl: narration?.audioDataUri ?? null,
     };
   });
 

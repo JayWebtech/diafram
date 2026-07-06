@@ -4,6 +4,7 @@ import { useCurrentFrame } from "remotion";
 import { cameraTransformString } from "./geometry";
 import { getSceneIntroStyle } from "./transitions";
 import { IllustrationLayer } from "./IllustrationLayer";
+import { TextElementView } from "./TextElement";
 
 /**
  * Renders a single scene: the camera move, the intro transition, and every
@@ -47,6 +48,11 @@ export function SceneRenderer({ scene, illustrations, width, height, fps }: Scen
             );
           })}
         </g>
+
+        {/* Text sits in canvas space, above the camera group (unaffected by camera). */}
+        {scene.texts.map((text) => (
+          <TextElementView key={text.id} text={text} localFrame={localFrame} />
+        ))}
       </g>
     </svg>
   );

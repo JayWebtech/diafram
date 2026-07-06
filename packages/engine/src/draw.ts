@@ -22,6 +22,18 @@ export function isLayerActive(layer: Layer, sceneLocalFrame: number): boolean {
   return sceneLocalFrame >= layer.startFrame;
 }
 
+/**
+ * Generic reveal progress in [0, 1] for anything that appears at `startFrame`
+ * over `durationInFrames` — used by text captions and other timed reveals.
+ */
+export function getRevealProgress(
+  sceneLocalFrame: number,
+  startFrame: number,
+  durationInFrames: number,
+): number {
+  return clamp01((sceneLocalFrame - startFrame) / durationInFrames);
+}
+
 /** stroke-dash values that reveal a path from 0% to `progress`. */
 export interface PathDrawState {
   id: PathId;

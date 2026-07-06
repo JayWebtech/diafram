@@ -55,7 +55,9 @@ export function makeVideoProject(overrides: Partial<VideoProject> = {}): VideoPr
     transitionIn: "cut",
     camera: staticCamera(1),
     narration: "This is the intro.",
+    narrationAudioUrl: null,
     notes: "",
+    texts: [],
     layers: [
       {
         id: newLayerId(),
