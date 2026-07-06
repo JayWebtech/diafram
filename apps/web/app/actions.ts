@@ -3,6 +3,7 @@
 import { generateProjectFromStoryboard, generateStoryboard } from "@diafram/ai";
 import { zStoryboard, type Storyboard, type VideoProject } from "@diafram/schema";
 import { getLlmPort } from "@/lib/llm";
+import { getTtsPort } from "@/lib/tts";
 
 const ACCENT = "#f97316";
 
@@ -26,6 +27,7 @@ export async function generateProjectAction(
   const storyboard = zStoryboard.parse(storyboardInput);
   return generateProjectFromStoryboard({
     llm: getLlmPort(),
+    tts: getTtsPort(),
     storyboard,
     title,
     accentColor: ACCENT,
