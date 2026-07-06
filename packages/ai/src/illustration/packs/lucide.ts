@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { createRequire } from "node:module";
 import { dirname, join } from "node:path";
 import type { LibraryEntry } from "../starter-pack";
@@ -107,3 +107,33 @@ export const CURATED_LUCIDE: LucideSpec[] = [
   { file: "scan", keywords: ["scan", "verify", "read", "detect"] },
   { file: "settings", keywords: ["configuration", "options", "gear", "preferences", "setup"] },
 ];
+
+/**
+ * Load the ENTIRE Lucide set (filenames become search keywords), merging the
+ * curated domain synonyms above. ~2,000 professional icons gives broad coverage
+ * so retrieval almost always finds a clean icon and the weak LLM artist is
+ * rarely used. Icons that fail ingestion are skipped downstream.
+ */
+export function loadAllLucide(): LibraryEntry[] {
+  const dir = lucideIconDir();
+  const synonyms = new Map(CURATED_LUCIDE.map((s) => [s.file, s.keywords ?? []]));
+  const entries: LibraryEntry[] = [];
+
+  for (const filename of readdirSync(dir)) {
+    if (!filename.endsWith(".svg")) continue;
+    const file = filename.slice(0, -4);
+    let svg: string;
+    try {
+      svg = extractSvg(readFileSync(join(dir, filename), "utf8"));
+    } catch {
+      continue;
+    }
+    entries.push({
+      name: file.replace(/-/g, " "),
+      keywords: Array.from(new Set([...file.split("-"), ...(synonyms.get(file) ?? [])])),
+      svg,
+    });
+  }
+
+  return entries;
+}

@@ -6,7 +6,7 @@ import {
   newProjectId,
   newSceneId,
 } from "./ids";
-import type { Illustration } from "./illustration";
+import { zIllustration, type Illustration } from "./illustration";
 import type { Scene } from "./scene";
 import { IDENTITY_TRANSFORM } from "./primitives";
 import { zVideoProject, type VideoProject } from "./project";
@@ -21,7 +21,8 @@ import { zVideoProject, type VideoProject } from "./project";
 /** A minimal single-path illustration (a diagonal stroke) with a known length. */
 export function makeIllustration(overrides: Partial<Illustration> = {}): Illustration {
   const id = overrides.id ?? newIllustrationId();
-  return {
+  // Parse to apply schema defaults (reveal, markup, …) and stay valid by construction.
+  return zIllustration.parse({
     id,
     name: "diagonal stroke",
     viewBox: { minX: 0, minY: 0, width: 100, height: 100 },
@@ -40,7 +41,7 @@ export function makeIllustration(overrides: Partial<Illustration> = {}): Illustr
     promptHash: null,
     styleVersion: 1,
     ...overrides,
-  };
+  });
 }
 
 /** A one-scene, one-layer project that satisfies every schema invariant. */

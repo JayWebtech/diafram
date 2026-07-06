@@ -7,13 +7,15 @@
     "studio": "remotion studio src/index.ts",
     "render": "remotion render src/index.ts Explainer out/explainer.mp4",
     "still": "remotion still src/index.ts Explainer out/frame.png",
-    "worker": "tsx src/service/server.ts",
+    "worker": "tsx --env-file=.env src/service/server.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@diafram/db": "workspace:*",
     "@diafram/engine": "workspace:*",
     "@diafram/renderer": "workspace:*",
     "@diafram/schema": "workspace:*",
+    "@diafram/storage": "workspace:*",
     "@remotion/bundler": "^4.0.0",
     "@remotion/cli": "^4.0.0",
     "@remotion/renderer": "^4.0.0",

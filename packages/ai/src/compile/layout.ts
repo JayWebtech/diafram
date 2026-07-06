@@ -9,10 +9,17 @@ import type { CameraIntent, Illustration, Transform } from "@diafram/schema";
  * proposes bespoke layouts can slot in behind the same interface later.
  */
 
-/** Fraction of canvas height a single illustration should occupy. */
-const TARGET_HEIGHT_FRACTION = 0.5;
+/** Max fraction of canvas height a single illustration occupies. */
+const MAX_HEIGHT_FRACTION = 0.5;
+/** Max fraction of its slot width an illustration occupies (leaves a gutter). */
+const MAX_SLOT_WIDTH_FRACTION = 0.78;
 
-/** Place illustration `index` of `count` in a centered horizontal row. */
+/**
+ * Place illustration `index` of `count` in a centered horizontal row, **fitting
+ * each within its slot** so neighbours never overlap and nothing clips off the
+ * canvas edges. The scale is bounded by BOTH the height budget and the slot
+ * width — the previous height-only scale caused wide icons to collide.
+ */
 export function layoutInRow(
   illustration: Illustration,
   index: number,
@@ -21,11 +28,14 @@ export function layoutInRow(
   canvasHeight: number,
 ): Transform {
   const { width: vbW, height: vbH } = illustration.viewBox;
-  const scale = (canvasHeight * TARGET_HEIGHT_FRACTION) / vbH;
+  const slotWidth = canvasWidth / count;
+
+  const scale = Math.min(
+    (canvasHeight * MAX_HEIGHT_FRACTION) / vbH,
+    (slotWidth * MAX_SLOT_WIDTH_FRACTION) / vbW,
+  );
   const scaledW = vbW * scale;
   const scaledH = vbH * scale;
-
-  const slotWidth = canvasWidth / count;
   const slotCenterX = (index + 0.5) * slotWidth;
 
   return {

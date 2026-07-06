@@ -1,5 +1,5 @@
 {
-  "id": "prj_dcf684337a374d31",
+  "id": "prj_527cb57c956a4bc9",
   "title": "Explain blockchain to beginners",
   "schemaVersion": 1,
   "fps": 30,
@@ -9,206 +9,74 @@
   "scenes": [
     {
       "id": "scn_0_The_Prob",
-      "name": "The Problem",
+      "name": "The Problem: Trusting a Middleman",
       "durationInFrames": 180,
-      "transitionIn": "cut",
-      "camera": {
-        "keyframes": [
-          {
-            "frame": 0,
-            "x": 0,
-            "y": 0,
-            "scale": 1,
-            "rotation": 0,
-            "easing": "easeInOut"
-          }
-        ],
-        "shake": null
-      },
-      "layers": [
-        {
-          "id": "lyr_0a9bb348db834537",
-          "illustrationId": "ill_2feefcc69bf54e04",
-          "startFrame": 0,
-          "drawDurationInFrames": 48,
-          "transform": {
-            "x": 210,
-            "y": 270,
-            "scale": 22.5,
-            "rotation": 0
-          },
-          "drawOrder": 0,
-          "opacity": 1
-        },
-        {
-          "id": "lyr_0713205e1ddf43b5",
-          "illustrationId": "ill_2545c7cfdb0a4aa4",
-          "startFrame": 11,
-          "drawDurationInFrames": 48,
-          "transform": {
-            "x": 1170,
-            "y": 270,
-            "scale": 22.5,
-            "rotation": 0
-          },
-          "drawOrder": 1,
-          "opacity": 1
-        }
-      ],
-      "narration": "Imagine a group of friends keeping track of who owes whom money. If one person keeps the list, they could cheat or lose it.",
-      "notes": ""
-    },
-    {
-      "id": "scn_1_A_Shared",
-      "name": "A Shared Ledger",
-      "durationInFrames": 210,
       "transitionIn": "fade",
       "camera": {
         "keyframes": [
           {
             "frame": 0,
-            "x": -76.8,
-            "y": 0,
-            "scale": 1.05,
-            "rotation": 0,
-            "easing": "easeInOut"
-          },
-          {
-            "frame": 209,
-            "x": 76.8,
-            "y": 0,
-            "scale": 1.05,
-            "rotation": 0,
-            "easing": "easeInOut"
-          }
-        ],
-        "shake": null
-      },
-      "layers": [
-        {
-          "id": "lyr_9d5eec57396141a4",
-          "illustrationId": "ill_373d56a662c04610",
-          "startFrame": 0,
-          "drawDurationInFrames": 48,
-          "transform": {
-            "x": 50,
-            "y": 270,
-            "scale": 22.5,
-            "rotation": 0
-          },
-          "drawOrder": 0,
-          "opacity": 1
-        },
-        {
-          "id": "lyr_9a8f0dd406df4db9",
-          "illustrationId": "ill_f908467bf3994a4b",
-          "startFrame": 11,
-          "drawDurationInFrames": 48,
-          "transform": {
-            "x": 690,
-            "y": 270,
-            "scale": 2.7,
-            "rotation": 0
-          },
-          "drawOrder": 1,
-          "opacity": 1
-        },
-        {
-          "id": "lyr_79b5dfacc44d43ad",
-          "illustrationId": "ill_d188966bc2fe4e1f",
-          "startFrame": 22,
-          "drawDurationInFrames": 48,
-          "transform": {
-            "x": 1330,
-            "y": 270,
-            "scale": 1.8,
-            "rotation": 0
-          },
-          "drawOrder": 2,
-          "opacity": 1
-        }
-      ],
-      "narration": "Now imagine everyone has a copy of the list. Every time someone pays, everyone updates their copy together.",
-      "notes": ""
-    },
-    {
-      "id": "scn_2_Blocks_o",
-      "name": "Blocks of Transactions",
-      "durationInFrames": 240,
-      "transitionIn": "slide",
-      "camera": {
-        "keyframes": [
-          {
-            "frame": 0,
             "x": 0,
             "y": 0,
             "scale": 1,
             "rotation": 0,
             "easing": "easeInOut"
-          },
-          {
-            "frame": 239,
-            "x": 0,
-            "y": 0,
-            "scale": 1.15,
-            "rotation": 0,
-            "easing": "easeInOut"
           }
         ],
         "shake": null
       },
       "layers": [
         {
-          "id": "lyr_1547760beac04382",
-          "illustrationId": "ill_9ade7e224efa4d8f",
+          "id": "lyr_4c547ef110994582",
+          "illustrationId": "ill_c19cfdaa7ea04780",
           "startFrame": 0,
           "drawDurationInFrames": 48,
           "transform": {
-            "x": 50,
-            "y": 270,
-            "scale": 22.5,
+            "x": 70.39999999999998,
+            "y": 290.4,
+            "scale": 20.8,
             "rotation": 0
           },
           "drawOrder": 0,
           "opacity": 1
         },
         {
-          "id": "lyr_32eef306cdc24da8",
-          "illustrationId": "ill_6d35649bc3dc4cea",
+          "id": "lyr_90427e6bad7a44c1",
+          "illustrationId": "ill_5c290007b14147b3",
           "startFrame": 11,
           "drawDurationInFrames": 48,
           "transform": {
-            "x": 690,
-            "y": 270,
-            "scale": 22.5,
+            "x": 710.4,
+            "y": 290.4,
+            "scale": 20.8,
             "rotation": 0
           },
           "drawOrder": 1,
           "opacity": 1
         },
         {
-          "id": "lyr_81ee551a92a64d30",
-          "illustrationId": "ill_192aca769b154f40",
+          "id": "lyr_c9c31f87b85a4efa",
+          "illustrationId": "ill_feb0bf2b1fc74109",
           "startFrame": 22,
           "drawDurationInFrames": 48,
           "transform": {
-            "x": 1330,
-            "y": 270,
-            "scale": 22.5,
+            "x": 1350.4,
+            "y": 290.4,
+            "scale": 20.8,
             "rotation": 0
           },
           "drawOrder": 2,
           "opacity": 1
         }
       ],
-      "narration": "Transactions are grouped into blocks, like pages in a notebook. Each block is linked to the previous one, forming a chain.",
+      "narration": "Imagine you send money to a friend. Normally, you need a bank to verify the transaction. But what if you could skip the middleman?",
       "notes": ""
     },
     {
-      "id": "scn_3_Security",
-      "name": "Security Through Consensus",
-      "durationInFrames": 210,
-      "transitionIn": "cut",
+      "id": "scn_1_The_Solu",
+      "name": "The Solution: A Shared Ledger",
+      "durationInFrames": 150,
+      "transitionIn": "slide",
       "camera": {
         "keyframes": [
           {
@@ -220,7 +88,7 @@
             "easing": "easeInOut"
           },
           {
-            "frame": 105,
+            "frame": 75,
             "x": 0,
             "y": 0,
             "scale": 1.2,
@@ -228,7 +96,7 @@
             "easing": "easeInOut"
           },
           {
-            "frame": 209,
+            "frame": 149,
             "x": 0,
             "y": 0,
             "scale": 1.2,
@@ -240,55 +108,266 @@
       },
       "layers": [
         {
-          "id": "lyr_d10da0950b0d49ef",
-          "illustrationId": "ill_2db57daf137a4586",
+          "id": "lyr_1643882ed8b74f10",
+          "illustrationId": "ill_0dd70509bf8749ad",
           "startFrame": 0,
           "drawDurationInFrames": 48,
           "transform": {
-            "x": 50,
-            "y": 270,
-            "scale": 5.4,
+            "x": 70.39999999999998,
+            "y": 290.4,
+            "scale": 20.8,
             "rotation": 0
           },
           "drawOrder": 0,
           "opacity": 1
         },
         {
-          "id": "lyr_1e97d1f0124e4c35",
-          "illustrationId": "ill_c394e667af374897",
+          "id": "lyr_6d45a29c43344f5d",
+          "illustrationId": "ill_127f983722bb42e6",
           "startFrame": 11,
           "drawDurationInFrames": 48,
           "transform": {
-            "x": 690,
-            "y": 270,
-            "scale": 22.5,
+            "x": 710.4,
+            "y": 290.4,
+            "scale": 20.8,
             "rotation": 0
           },
           "drawOrder": 1,
           "opacity": 1
         },
         {
-          "id": "lyr_58d1cf5080824a6b",
-          "illustrationId": "ill_8fb11f20068343dd",
+          "id": "lyr_f76eef77d15b46f4",
+          "illustrationId": "ill_ffbf3107adb24c94",
           "startFrame": 22,
           "drawDurationInFrames": 48,
           "transform": {
-            "x": 1330,
-            "y": 270,
-            "scale": 22.5,
+            "x": 1350.4,
+            "y": 290.4,
+            "scale": 20.8,
             "rotation": 0
           },
           "drawOrder": 2,
           "opacity": 1
         }
       ],
-      "narration": "Before adding a block, the network must agree it's valid. This prevents cheating because everyone checks the work.",
+      "narration": "Blockchain is like a digital notebook that everyone can see. When you make a transaction, it's recorded in a new page, called a block.",
       "notes": ""
     },
     {
-      "id": "scn_4_Decentra",
-      "name": "Decentralization",
+      "id": "scn_2_Linking_",
+      "name": "Linking Blocks Together",
+      "durationInFrames": 210,
+      "transitionIn": "zoom",
+      "camera": {
+        "keyframes": [
+          {
+            "frame": 0,
+            "x": -76.8,
+            "y": 0,
+            "scale": 1.05,
+            "rotation": 0,
+            "easing": "easeInOut"
+          },
+          {
+            "frame": 209,
+            "x": 76.8,
+            "y": 0,
+            "scale": 1.05,
+            "rotation": 0,
+            "easing": "easeInOut"
+          }
+        ],
+        "shake": null
+      },
+      "layers": [
+        {
+          "id": "lyr_08886b7e4f9945ac",
+          "illustrationId": "ill_837b60afb0094585",
+          "startFrame": 0,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 70.39999999999998,
+            "y": 290.4,
+            "scale": 20.8,
+            "rotation": 0
+          },
+          "drawOrder": 0,
+          "opacity": 1
+        },
+        {
+          "id": "lyr_2544b75c293544ab",
+          "illustrationId": "ill_ded285a6aee44205",
+          "startFrame": 11,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 710.4,
+            "y": 290.4,
+            "scale": 20.8,
+            "rotation": 0
+          },
+          "drawOrder": 1,
+          "opacity": 1
+        },
+        {
+          "id": "lyr_f921ba24b8b0469e",
+          "illustrationId": "ill_e0df6628d7ca455b",
+          "startFrame": 22,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 1350.4,
+            "y": 290.4,
+            "scale": 20.8,
+            "rotation": 0
+          },
+          "drawOrder": 2,
+          "opacity": 1
+        }
+      ],
+      "narration": "Each new block is chained to the previous one using a unique code, or hash. This makes it impossible to change past records without breaking the chain.",
+      "notes": ""
+    },
+    {
+      "id": "scn_3_Decentra",
+      "name": "Decentralization: No Single Owner",
       "durationInFrames": 180,
+      "transitionIn": "cut",
+      "camera": {
+        "keyframes": [
+          {
+            "frame": 0,
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "easing": "easeInOut"
+          }
+        ],
+        "shake": null
+      },
+      "layers": [
+        {
+          "id": "lyr_67e8d1b555b14f99",
+          "illustrationId": "ill_7b25866e31fe4852",
+          "startFrame": 0,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 70.39999999999998,
+            "y": 290.4,
+            "scale": 20.8,
+            "rotation": 0
+          },
+          "drawOrder": 0,
+          "opacity": 1
+        },
+        {
+          "id": "lyr_d34c3a7cefe94500",
+          "illustrationId": "ill_cdb9b167d6cc409c",
+          "startFrame": 11,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 710.4,
+            "y": 290.4,
+            "scale": 20.8,
+            "rotation": 0
+          },
+          "drawOrder": 1,
+          "opacity": 1
+        },
+        {
+          "id": "lyr_835d20eb7b594128",
+          "illustrationId": "ill_0fe7edf8b2b34bd0",
+          "startFrame": 22,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 1350.4,
+            "y": 290.4,
+            "scale": 20.8,
+            "rotation": 0
+          },
+          "drawOrder": 2,
+          "opacity": 1
+        }
+      ],
+      "narration": "Instead of one bank, the notebook is copied across many computers, called nodes. Everyone has the same record, so no one can cheat.",
+      "notes": ""
+    },
+    {
+      "id": "scn_4_Security",
+      "name": "Security Through Consensus",
+      "durationInFrames": 150,
+      "transitionIn": "whipPan",
+      "camera": {
+        "keyframes": [
+          {
+            "frame": 0,
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "easing": "easeInOut"
+          },
+          {
+            "frame": 149,
+            "x": 0,
+            "y": 0,
+            "scale": 1.15,
+            "rotation": 0,
+            "easing": "easeInOut"
+          }
+        ],
+        "shake": null
+      },
+      "layers": [
+        {
+          "id": "lyr_bc4f6cf9172d4968",
+          "illustrationId": "ill_fe7b580c226148b2",
+          "startFrame": 0,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 70.39999999999998,
+            "y": 290.4,
+            "scale": 20.8,
+            "rotation": 0
+          },
+          "drawOrder": 0,
+          "opacity": 1
+        },
+        {
+          "id": "lyr_4b5aab0ba69a43a2",
+          "illustrationId": "ill_e64f9018df4d4a06",
+          "startFrame": 11,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 710.4,
+            "y": 290.4,
+            "scale": 20.8,
+            "rotation": 0
+          },
+          "drawOrder": 1,
+          "opacity": 1
+        },
+        {
+          "id": "lyr_a93723dbcaf14df3",
+          "illustrationId": "ill_b6eb36e217e2492b",
+          "startFrame": 22,
+          "drawDurationInFrames": 48,
+          "transform": {
+            "x": 1350.3999999999999,
+            "y": 290.4,
+            "scale": 2.4960000000000004,
+            "rotation": 0
+          },
+          "drawOrder": 2,
+          "opacity": 1
+        }
+      ],
+      "narration": "To add a new block, most nodes must agree it's valid. This agreement, or consensus, keeps the blockchain secure and trustworthy.",
+      "notes": ""
+    },
+    {
+      "id": "scn_5_Real_Wor",
+      "name": "Real-World Use: Beyond Money",
+      "durationInFrames": 210,
       "transitionIn": "fade",
       "camera": {
         "keyframes": [
@@ -301,7 +380,7 @@
             "easing": "easeInOut"
           },
           {
-            "frame": 179,
+            "frame": 209,
             "x": 76.8,
             "y": 0,
             "scale": 1.05,
@@ -313,56 +392,56 @@
       },
       "layers": [
         {
-          "id": "lyr_d62270937b094bfe",
-          "illustrationId": "ill_bf490d227efc421c",
+          "id": "lyr_8005f4789d2f4ed6",
+          "illustrationId": "ill_8495a747ec854749",
           "startFrame": 0,
           "drawDurationInFrames": 48,
           "transform": {
-            "x": 50,
-            "y": 270,
-            "scale": 22.5,
+            "x": 70.39999999999998,
+            "y": 290.4,
+            "scale": 20.8,
             "rotation": 0
           },
           "drawOrder": 0,
           "opacity": 1
         },
         {
-          "id": "lyr_4a0690aeb66b40f7",
-          "illustrationId": "ill_e37a6638129a48c2",
+          "id": "lyr_fa0d5bde3e8144e9",
+          "illustrationId": "ill_2eb618dea9334755",
           "startFrame": 11,
           "drawDurationInFrames": 48,
           "transform": {
-            "x": 690,
-            "y": 270,
-            "scale": 22.5,
+            "x": 710.4,
+            "y": 290.4,
+            "scale": 20.8,
             "rotation": 0
           },
           "drawOrder": 1,
           "opacity": 1
         },
         {
-          "id": "lyr_f93e845efcf4476f",
-          "illustrationId": "ill_fe8ca878c3e947af",
+          "id": "lyr_6c9c536489bf47d6",
+          "illustrationId": "ill_44cc008a1b894729",
           "startFrame": 22,
           "drawDurationInFrames": 48,
           "transform": {
-            "x": 1330,
-            "y": 270,
-            "scale": 22.5,
+            "x": 1350.4,
+            "y": 290.4,
+            "scale": 20.8,
             "rotation": 0
           },
           "drawOrder": 2,
           "opacity": 1
         }
       ],
-      "narration": "No single person controls the blockchain. It's stored on many computers worldwide, making it transparent and trustworthy.",
+      "narration": "Blockchain isn't just for cryptocurrencies. It can track supply chains, secure medical records, and even verify digital art ownership.",
       "notes": ""
     }
   ],
   "illustrations": [
     {
-      "id": "ill_2feefcc69bf54e04",
-      "name": "group of stick figures",
+      "id": "ill_c19cfdaa7ea04780",
+      "name": "stick figure sending money",
       "viewBox": {
         "minX": 0,
         "minY": 0,
@@ -371,49 +450,33 @@
       },
       "paths": [
         {
-          "id": "pth_8c8902bd131e4d41",
-          "d": "M 5 7 a 4 4 0 1 0 8 0 a 4 4 0 1 0 -8 0",
+          "id": "pth_c9199ab87dc04bc3",
+          "d": "M 4 6 H 20 A 2 2 0 0 1 22 8 V 16 A 2 2 0 0 1 20 18 H 4 A 2 2 0 0 1 2 16 V 8 A 2 2 0 0 1 4 6 Z",
           "order": 0,
-          "length": 25.13262639081395,
+          "length": 60.56635625960637,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         },
         {
-          "id": "pth_c58b185fea2f4d8d",
-          "d": "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2",
+          "id": "pth_84a03d5c675d46bc",
+          "d": "M 10 12 a 2 2 0 1 0 4 0 a 2 2 0 1 0 -4 0",
           "order": 1,
-          "length": 22.566356259606373,
-          "strokeWidth": 1,
-          "stroke": "#111111",
-          "fill": null
-        },
-        {
-          "id": "pth_3a76aa9679a74ff6",
-          "d": "M16 3.128a4 4 0 0 1 0 7.744",
-          "order": 2,
-          "length": 10.53704287360411,
-          "strokeWidth": 1,
-          "stroke": "#111111",
-          "fill": null
-        },
-        {
-          "id": "pth_a06639d247ab4137",
-          "d": "M22 21v-2a4 4 0 0 0-3-3.87",
-          "order": 3,
-          "length": 7.26947756827094,
+          "length": 12.566313195406988,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         }
       ],
+      "markup": null,
+      "reveal": "stroke",
       "accentColor": "#f97316",
-      "promptHash": "3fd36b5b280c5922ff649f9c36ac55bab572ea9489455f12ee6d8d763c98ff4c",
+      "promptHash": "83ee54d42de6cff8b8dce25e4c51ea58941601058af5b6592be7b06807b3ea66",
       "styleVersion": 1
     },
     {
-      "id": "ill_2545c7cfdb0a4aa4",
-      "name": "paper list with title",
+      "id": "ill_5c290007b14147b3",
+      "name": "bank building icon",
       "viewBox": {
         "minX": 0,
         "minY": 0,
@@ -422,265 +485,69 @@
       },
       "paths": [
         {
-          "id": "pth_e80b627732ca4e84",
-          "d": "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
+          "id": "pth_365468c24c834538",
+          "d": "M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z",
           "order": 0,
-          "length": 66.28813197746555,
+          "length": 38.97580965160245,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         },
         {
-          "id": "pth_c857a0feca334356",
-          "d": "M14 2v5a1 1 0 0 0 1 1h5",
+          "id": "pth_6d8c2254c41a484c",
+          "d": "M3 22h18",
           "order": 1,
-          "length": 11.570794532450796,
+          "length": 18,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         },
         {
-          "id": "pth_813cddf780854675",
-          "d": "M16 13H8",
+          "id": "pth_2eb0e9e9dbb94160",
+          "d": "M10 18v-7",
           "order": 2,
-          "length": 8,
+          "length": 7,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         },
         {
-          "id": "pth_da7db973cc3e4ca0",
-          "d": "M16 17H8",
+          "id": "pth_2608025c31154fa5",
+          "d": "M14 18v-7",
           "order": 3,
-          "length": 8,
+          "length": 7,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         },
         {
-          "id": "pth_d2b4160402f14771",
-          "d": "M10 9H8",
+          "id": "pth_e03843f6de6241d5",
+          "d": "M18 18v-7",
           "order": 4,
-          "length": 2,
-          "strokeWidth": 1,
-          "stroke": "#111111",
-          "fill": null
-        }
-      ],
-      "accentColor": "#f97316",
-      "promptHash": "e05a6799f600404d7f90191de3752453058e0e3f82e61ae90cf8098cb9010de2",
-      "styleVersion": 1
-    },
-    {
-      "id": "ill_373d56a662c04610",
-      "name": "stick figure holding paper list",
-      "viewBox": {
-        "minX": 0,
-        "minY": 0,
-        "width": 24,
-        "height": 24
-      },
-      "paths": [
-        {
-          "id": "pth_e80b627732ca4e84",
-          "d": "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
-          "order": 0,
-          "length": 66.28813197746555,
+          "length": 7,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         },
         {
-          "id": "pth_c857a0feca334356",
-          "d": "M14 2v5a1 1 0 0 0 1 1h5",
-          "order": 1,
-          "length": 11.570794532450796,
-          "strokeWidth": 1,
-          "stroke": "#111111",
-          "fill": null
-        },
-        {
-          "id": "pth_813cddf780854675",
-          "d": "M16 13H8",
-          "order": 2,
-          "length": 8,
-          "strokeWidth": 1,
-          "stroke": "#111111",
-          "fill": null
-        },
-        {
-          "id": "pth_da7db973cc3e4ca0",
-          "d": "M16 17H8",
-          "order": 3,
-          "length": 8,
-          "strokeWidth": 1,
-          "stroke": "#111111",
-          "fill": null
-        },
-        {
-          "id": "pth_d2b4160402f14771",
-          "d": "M10 9H8",
-          "order": 4,
-          "length": 2,
-          "strokeWidth": 1,
-          "stroke": "#111111",
-          "fill": null
-        }
-      ],
-      "accentColor": "#f97316",
-      "promptHash": "0c75b015b11ed17e8a3955e2135ead96a45a23e535eeed9cb59e9be15ef403e1",
-      "styleVersion": 1
-    },
-    {
-      "id": "ill_f908467bf3994a4b",
-      "name": "coin",
-      "viewBox": {
-        "minX": 0,
-        "minY": 0,
-        "width": 200,
-        "height": 200
-      },
-      "paths": [
-        {
-          "id": "pth_f4954c2b8a6e421b",
-          "d": "M100,20 C144.6,20 180,55.4 180,100 C180,144.6 144.6,180 100,180 C55.4,180 20,144.6 20,100 C20,55.4 55.4,20 100,20 Z",
-          "order": 0,
-          "length": 503.45175698193145,
-          "strokeWidth": 8,
-          "stroke": "#111111",
-          "fill": null
-        },
-        {
-          "id": "pth_de78f763e94f40fa",
-          "d": "M100,40 C133.1,40 160,66.9 160,100 C160,133.1 133.1,160 100,160 C66.9,160 40,133.1 40,100 C40,66.9 66.9,40 100,40 Z",
-          "order": 1,
-          "length": 376.9796123426551,
-          "strokeWidth": 8,
-          "stroke": "#111111",
-          "fill": null
-        },
-        {
-          "id": "pth_aabd1fac54114f3f",
-          "d": "M100,60 L100,140 M88,78 C88,78 112,68 112,90 C112,112 88,108 88,120 C88,132 112,122 112,122",
-          "order": 2,
-          "length": 182.3947312379627,
-          "strokeWidth": 8,
-          "stroke": "#f97316",
-          "fill": null
-        }
-      ],
-      "accentColor": "#f97316",
-      "promptHash": "1198099de564d5e10ad1735836a8b275a48ab4c09dcd29052835a8165b7f087f",
-      "styleVersion": 1
-    },
-    {
-      "id": "ill_d188966bc2fe4e1f",
-      "name": "writing hand",
-      "viewBox": {
-        "minX": 0,
-        "minY": 0,
-        "width": 300,
-        "height": 300
-      },
-      "paths": [
-        {
-          "id": "pth_a2a6c09dc8e14c05",
-          "d": "M140 200 Q120 180 110 160 Q100 140 115 120 Q130 110 140 120 Q150 130 155 150",
-          "order": 0,
-          "length": 154.38506767027113,
-          "strokeWidth": 13,
-          "stroke": "#111111",
-          "fill": null
-        },
-        {
-          "id": "pth_0eb0040e5d5f40e8",
-          "d": "M140 120 Q145 90 155 70 Q160 60 165 65",
-          "order": 1,
-          "length": 66.07671297394552,
-          "strokeWidth": 13,
-          "stroke": "#111111",
-          "fill": null
-        },
-        {
-          "id": "pth_bb7954d2926c4883",
-          "d": "M155 150 Q160 120 170 100 Q175 90 180 95",
-          "order": 2,
-          "length": 66.07671297394552,
-          "strokeWidth": 13,
-          "stroke": "#111111",
-          "fill": null
-        },
-        {
-          "id": "pth_462a379e4e114337",
-          "d": "M165 65 L220 35",
-          "order": 3,
-          "length": 62.64982043070834,
-          "strokeWidth": 13,
-          "stroke": "#f97316",
-          "fill": null
-        },
-        {
-          "id": "pth_3ee1f12db19049e2",
-          "d": "M130 260 L140 200",
-          "order": 4,
-          "length": 60.8276253029822,
-          "strokeWidth": 13,
-          "stroke": "#111111",
-          "fill": null
-        },
-        {
-          "id": "pth_5b97973432574d28",
-          "d": "M115 120 Q95 115 85 130 Q80 145 95 150",
+          "id": "pth_0a08a135afa5432c",
+          "d": "M6 18v-7",
           "order": 5,
-          "length": 59.71797184283122,
-          "strokeWidth": 13,
-          "stroke": "#111111",
-          "fill": null
-        },
-        {
-          "id": "pth_6fa32349b67842e6",
-          "d": "M225 32 Q240 40 250 35 Q260 28 270 32",
-          "order": 6,
-          "length": 47.34581629027913,
-          "strokeWidth": 13,
-          "stroke": "#f97316",
-          "fill": null
-        },
-        {
-          "id": "pth_7262fa3a72f54b02",
-          "d": "M165 160 Q175 140 185 125",
-          "order": 7,
-          "length": 40.336895125865766,
-          "strokeWidth": 13,
-          "stroke": "#111111",
-          "fill": null
-        },
-        {
-          "id": "pth_1973902d74184ecb",
-          "d": "M170 170 Q185 160 195 150",
-          "order": 8,
-          "length": 32.06679048984927,
-          "strokeWidth": 13,
-          "stroke": "#111111",
-          "fill": null
-        },
-        {
-          "id": "pth_a66779a037d44306",
-          "d": "M220 35 L230 30",
-          "order": 9,
-          "length": 11.180339887498949,
-          "strokeWidth": 13,
+          "length": 7,
+          "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         }
       ],
+      "markup": null,
+      "reveal": "stroke",
       "accentColor": "#f97316",
-      "promptHash": "f4e9c39b68a5b10faf2e792bb311212f42ca2afff379e11caae9e8c8f3b6eff8",
+      "promptHash": "864e462b71760679ed69e0b0badb35252dbf0789aa623baccdc5c8a93d52732e",
       "styleVersion": 1
     },
     {
-      "id": "ill_9ade7e224efa4d8f",
-      "name": "rectangular block with label",
+      "id": "ill_feb0bf2b1fc74109",
+      "name": "stick figure receiving money",
       "viewBox": {
         "minX": 0,
         "minY": 0,
@@ -689,40 +556,33 @@
       },
       "paths": [
         {
-          "id": "pth_a7a8538568ca4e0e",
-          "d": "M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z",
+          "id": "pth_c9199ab87dc04bc3",
+          "d": "M 4 6 H 20 A 2 2 0 0 1 22 8 V 16 A 2 2 0 0 1 20 18 H 4 A 2 2 0 0 1 2 16 V 8 A 2 2 0 0 1 4 6 Z",
           "order": 0,
-          "length": 60.80719443809261,
+          "length": 60.56635625960637,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         },
         {
-          "id": "pth_91c7099d32d248f5",
-          "d": "m3.3 7 8.7 5 8.7-5",
+          "id": "pth_84a03d5c675d46bc",
+          "d": "M 10 12 a 2 2 0 1 0 4 0 a 2 2 0 1 0 -4 0",
           "order": 1,
-          "length": 20.06888138387389,
-          "strokeWidth": 1,
-          "stroke": "#111111",
-          "fill": null
-        },
-        {
-          "id": "pth_0493a447995944f5",
-          "d": "M12 22V12",
-          "order": 2,
-          "length": 10,
+          "length": 12.566313195406988,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         }
       ],
+      "markup": null,
+      "reveal": "stroke",
       "accentColor": "#f97316",
-      "promptHash": "503d05a23c3eeb318bcc69938bf6aecef7f9f76ec1b93864116ac08e700ef717",
+      "promptHash": "c9e549ffe03d52c5cd0a521b7edef98e75b1ec23f3d89d9e43ee41f71f69e7c9",
       "styleVersion": 1
     },
     {
-      "id": "ill_6d35649bc3dc4cea",
-      "name": "arrow pointing from one block to next",
+      "id": "ill_0dd70509bf8749ad",
+      "name": "open notebook",
       "viewBox": {
         "minX": 0,
         "minY": 0,
@@ -731,106 +591,42 @@
       },
       "paths": [
         {
-          "id": "pth_0b7a400bd41d4884",
-          "d": "m12 5 7 7-7 7",
+          "id": "pth_47f14222d0f04b11",
+          "d": "M22 6V4a1 1 0 0 0-1-1h-5a4 4 0 0 0-4 4 4 4 0 0 0-4-4H3a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h6a3 3 0 0 1 3 3 3 3 0 0 1 3-3h6a1 1 0 0 0 1-1v-1.3",
           "order": 0,
-          "length": 19.79898987322333,
+          "length": 66.57430158411434,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         },
         {
-          "id": "pth_0a90b9c341d4426c",
-          "d": "M5 12h14",
+          "id": "pth_f0e0f4d5d13e49d6",
+          "d": "M12 21V7",
           "order": 1,
           "length": 14,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
-        }
-      ],
-      "accentColor": "#f97316",
-      "promptHash": "aceee0f1bf44aff4cb3ebe41b92faeb96a0448296db43d55e2ea931b561a2d10",
-      "styleVersion": 1
-    },
-    {
-      "id": "ill_192aca769b154f40",
-      "name": "transaction lines inside block",
-      "viewBox": {
-        "minX": 0,
-        "minY": 0,
-        "width": 24,
-        "height": 24
-      },
-      "paths": [
-        {
-          "id": "pth_a7a8538568ca4e0e",
-          "d": "M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z",
-          "order": 0,
-          "length": 60.80719443809261,
-          "strokeWidth": 1,
-          "stroke": "#111111",
-          "fill": null
         },
         {
-          "id": "pth_91c7099d32d248f5",
-          "d": "m3.3 7 8.7 5 8.7-5",
-          "order": 1,
-          "length": 20.06888138387389,
-          "strokeWidth": 1,
-          "stroke": "#111111",
-          "fill": null
-        },
-        {
-          "id": "pth_0493a447995944f5",
-          "d": "M12 22V12",
+          "id": "pth_aff62be6961841bb",
+          "d": "m16 12 2 2 4-4",
           "order": 2,
-          "length": 10,
+          "length": 8.485281374238571,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         }
       ],
+      "markup": null,
+      "reveal": "stroke",
       "accentColor": "#f97316",
-      "promptHash": "c169c60c2e1e3640381521c1b71f6673d9eaf8c7678c86bc50a52b35eada91b1",
+      "promptHash": "1b05895634802daeb3739a19cfa2cbaebd459afea98ab77be0848f0a166c9519",
       "styleVersion": 1
     },
     {
-      "id": "ill_2db57daf137a4586",
-      "name": "stick figure with checkmark",
-      "viewBox": {
-        "minX": 0,
-        "minY": 0,
-        "width": 100,
-        "height": 100
-      },
-      "paths": [
-        {
-          "id": "pth_f3cbcc0831c44873",
-          "d": "M26 50 a24 24 0 1 0 48 0 a24 24 0 1 0 -48 0",
-          "order": 0,
-          "length": 150.79575834488384,
-          "strokeWidth": 4,
-          "stroke": "#111111",
-          "fill": null
-        },
-        {
-          "id": "pth_694db8a307b24349",
-          "d": "M40 51 L48 60 L62 42",
-          "order": 1,
-          "length": 34.845103080775054,
-          "strokeWidth": 4,
-          "stroke": "#f97316",
-          "fill": null
-        }
-      ],
-      "accentColor": "#f97316",
-      "promptHash": "05704d8b73f4ea814c9aedcd380ebbacb05f381eaec9e899f599d3f2861f7c2c",
-      "styleVersion": 1
-    },
-    {
-      "id": "ill_c394e667af374897",
-      "name": "block with checkmark",
+      "id": "ill_127f983722bb42e6",
+      "name": "hand writing with pen",
       "viewBox": {
         "minX": 0,
         "minY": 0,
@@ -839,40 +635,60 @@
       },
       "paths": [
         {
-          "id": "pth_a7a8538568ca4e0e",
-          "d": "M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z",
+          "id": "pth_de044f1366cb433f",
+          "d": "M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-.5",
           "order": 0,
-          "length": 60.80719443809261,
+          "length": 37.92476719470478,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         },
         {
-          "id": "pth_91c7099d32d248f5",
-          "d": "m3.3 7 8.7 5 8.7-5",
+          "id": "pth_285d71af98384a67",
+          "d": "M21.378 12.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z",
           "order": 1,
-          "length": 20.06888138387389,
+          "length": 27.072573089790346,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         },
         {
-          "id": "pth_0493a447995944f5",
-          "d": "M12 22V12",
+          "id": "pth_7c6454d3ad5e4680",
+          "d": "M 9 2 H 15 A 1 1 0 0 1 16 3 V 5 A 1 1 0 0 1 15 6 H 9 A 1 1 0 0 1 8 5 V 3 A 1 1 0 0 1 9 2 Z",
           "order": 2,
-          "length": 10,
+          "length": 22.283178129803183,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_a3d2d1de10324867",
+          "d": "M16 4h2a2 2 0 0 1 1.73 1",
+          "order": 3,
+          "length": 4.0923438416856195,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_938f0e94cf184a75",
+          "d": "M8 18h1",
+          "order": 4,
+          "length": 1,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         }
       ],
+      "markup": null,
+      "reveal": "stroke",
       "accentColor": "#f97316",
-      "promptHash": "6863989fc6561ce68d42d80524e3557691aae819909c0a9cda088d1ec1740a62",
+      "promptHash": "14a6142814a8c5a3a4cfbec509901a3ec67810c87cbebcc8ed545a25ceff6cff",
       "styleVersion": 1
     },
     {
-      "id": "ill_8fb11f20068343dd",
-      "name": "red X mark",
+      "id": "ill_ffbf3107adb24c94",
+      "name": "eye icons",
       "viewBox": {
         "minX": 0,
         "minY": 0,
@@ -881,40 +697,60 @@
       },
       "paths": [
         {
-          "id": "pth_8416582227034d31",
-          "d": "M 2 12 a 10 10 0 1 0 20 0 a 10 10 0 1 0 -20 0",
+          "id": "pth_ae251caf099f44a2",
+          "d": "M2 8a10.645 10.645 0 0 0 20 0",
           "order": 0,
-          "length": 62.83156597703503,
+          "length": 25.992884016831415,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         },
         {
-          "id": "pth_b53ac81704064e63",
-          "d": "m15 9-6 6",
+          "id": "pth_cab722fcf13f4ec7",
+          "d": "m15 18-.722-3.25",
           "order": 1,
-          "length": 8.48528137423857,
+          "length": 3.3292317432104364,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         },
         {
-          "id": "pth_db4db4dc69e94ecf",
-          "d": "m9 9 6 6",
+          "id": "pth_8028c9278ead4bb3",
+          "d": "m9 18 .722-3.25",
           "order": 2,
-          "length": 8.48528137423857,
+          "length": 3.3292317432104364,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_d5f618932d83491b",
+          "d": "m20 15-1.726-2.05",
+          "order": 3,
+          "length": 2.679846264247261,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_1865347c01ed4a63",
+          "d": "m4 15 1.726-2.05",
+          "order": 4,
+          "length": 2.679846264247261,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         }
       ],
+      "markup": null,
+      "reveal": "stroke",
       "accentColor": "#f97316",
-      "promptHash": "c2646e59a8d068344fd5a51a56c92ff706e6ed9508228c169df6e0e55ced9e98",
+      "promptHash": "53a4fcf7248280f9eca5932d7d9eb4444192bc3a5635701adfd69b9da2d6d0a1",
       "styleVersion": 1
     },
     {
-      "id": "ill_bf490d227efc421c",
-      "name": "globe",
+      "id": "ill_837b60afb0094585",
+      "name": "chain of blocks",
       "viewBox": {
         "minX": 0,
         "minY": 0,
@@ -923,40 +759,123 @@
       },
       "paths": [
         {
-          "id": "pth_2b06d6f8e043414d",
-          "d": "M 2 12 a 10 10 0 1 0 20 0 a 10 10 0 1 0 -20 0",
+          "id": "pth_18136a53c96243e1",
+          "d": "M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z",
           "order": 0,
-          "length": 62.83156597703503,
+          "length": 33.67347353809165,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         },
         {
-          "id": "pth_dda4a1b051df4ff9",
-          "d": "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20",
+          "id": "pth_80d1b86a7bfa4a40",
+          "d": "M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z",
           "order": 1,
-          "length": 44.13869240703488,
+          "length": 33.67347353809164,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         },
         {
-          "id": "pth_299bef171df6417c",
-          "d": "M2 12h20",
+          "id": "pth_444d838efc61430b",
+          "d": "M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z",
           "order": 2,
-          "length": 20,
+          "length": 33.67347290754457,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_96ce89f08d984aae",
+          "d": "m7 16.5 5-3",
+          "order": 3,
+          "length": 5.830951894845301,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_18fe66036a6246f8",
+          "d": "m17 16.5-5-3",
+          "order": 4,
+          "length": 5.830951894845301,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_ca4b14191b6c428e",
+          "d": "m7 16.5-4.74-2.85",
+          "order": 5,
+          "length": 5.530831763848906,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_875608efb85d4a48",
+          "d": "m17 16.5 4.74-2.85",
+          "order": 6,
+          "length": 5.530831763848906,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_789856c3182240d5",
+          "d": "M12 8 7.26 5.15",
+          "order": 7,
+          "length": 5.530831763848906,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_c606d4d230274ffb",
+          "d": "m12 8 4.74-2.85",
+          "order": 8,
+          "length": 5.530831763848906,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_2d6fb8c3dda14f5f",
+          "d": "M12 13.5V8",
+          "order": 9,
+          "length": 5.5,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_9f31efb128754378",
+          "d": "M7 16.5v5.17",
+          "order": 10,
+          "length": 5.17,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_0b00fc460fb144e8",
+          "d": "M17 16.5v5.17",
+          "order": 11,
+          "length": 5.17,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         }
       ],
+      "markup": null,
+      "reveal": "stroke",
       "accentColor": "#f97316",
-      "promptHash": "d857d86c5a090aa372a4706367d7597d61a5dc32a1aa9956a3f88306c6f90b02",
+      "promptHash": "bee769e0dba662cfb3e04d9a7537f0702badb284b3bc3e4966d94cfeffeba8b8",
       "styleVersion": 1
     },
     {
-      "id": "ill_e37a6638129a48c2",
-      "name": "computer icon",
+      "id": "ill_ded285a6aee44205",
+      "name": "lock icon",
       "viewBox": {
         "minX": 0,
         "minY": 0,
@@ -965,7 +884,104 @@
       },
       "paths": [
         {
-          "id": "pth_df97ee320e914cb9",
+          "id": "pth_09c78108324748a5",
+          "d": "M20 15v6a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20",
+          "order": 0,
+          "length": 41.42474027958017,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_3a9f36e7f12242d7",
+          "d": "M 13 6 H 19 A 1 1 0 0 1 20 7 V 10 A 1 1 0 0 1 19 11 H 13 A 1 1 0 0 1 12 10 V 7 A 1 1 0 0 1 13 6 Z",
+          "order": 1,
+          "length": 24.28317812980319,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_fd4742fc6e49430c",
+          "d": "M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H10",
+          "order": 2,
+          "length": 22.42698633112699,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_13b486c9a2b841c2",
+          "d": "M18 6V4a2 2 0 1 0-4 0v2",
+          "order": 3,
+          "length": 10.283156597703492,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        }
+      ],
+      "markup": null,
+      "reveal": "stroke",
+      "accentColor": "#f97316",
+      "promptHash": "5cbafc803f9fa1a7cafcece499188ffbb0377b8803d5fe3b28950c1b2bb00ad9",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_e0df6628d7ca455b",
+      "name": "hash code label",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 24,
+        "height": 24
+      },
+      "paths": [
+        {
+          "id": "pth_1a7621a718d54eeb",
+          "d": "m14.5 4-5 16",
+          "order": 0,
+          "length": 16.76305461424021,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_153295e2c96544f0",
+          "d": "m18 16 4-4-4-4",
+          "order": 1,
+          "length": 11.313708498984761,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_a908e7f7b6ab4fa5",
+          "d": "m6 8-4 4 4 4",
+          "order": 2,
+          "length": 11.313708498984761,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        }
+      ],
+      "markup": null,
+      "reveal": "stroke",
+      "accentColor": "#f97316",
+      "promptHash": "f399cec12ca010223b89688f02df2f7f7da5511174d642df5e127c2ee1a8fdb3",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_7b25866e31fe4852",
+      "name": "computer monitor icon",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 24,
+        "height": 24
+      },
+      "paths": [
+        {
+          "id": "pth_b1a5293ffc224cf7",
           "d": "M 4 3 H 20 A 2 2 0 0 1 22 5 V 15 A 2 2 0 0 1 20 17 H 4 A 2 2 0 0 1 2 15 V 5 A 2 2 0 0 1 4 3 Z",
           "order": 0,
           "length": 64.56635625960637,
@@ -974,7 +990,7 @@
           "fill": null
         },
         {
-          "id": "pth_920c0f415ad24870",
+          "id": "pth_6cd7f097179e42d4",
           "d": "M 8 21 L 16 21",
           "order": 1,
           "length": 8,
@@ -983,7 +999,7 @@
           "fill": null
         },
         {
-          "id": "pth_b926d8a5e0b341a4",
+          "id": "pth_873af296dc1948ef",
           "d": "M 12 17 L 12 21",
           "order": 2,
           "length": 4,
@@ -992,13 +1008,15 @@
           "fill": null
         }
       ],
+      "markup": null,
+      "reveal": "stroke",
       "accentColor": "#f97316",
-      "promptHash": "6cf630cfd972d777663d14f4b451b4a7a5b9f311376c66111cbb87a18acf736f",
+      "promptHash": "03095abccacaf2d77a0ff32d208da654052a2e87f39b5ab1e1993c381d4ccea2",
       "styleVersion": 1
     },
     {
-      "id": "ill_fe8ca878c3e947af",
-      "name": "chain icon",
+      "id": "ill_cdb9b167d6cc409c",
+      "name": "network connection lines",
       "viewBox": {
         "minX": 0,
         "minY": 0,
@@ -1007,26 +1025,471 @@
       },
       "paths": [
         {
-          "id": "pth_5c59b68ef8dd4b2a",
-          "d": "M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71",
+          "id": "pth_3f2a1137251043ba",
+          "d": "M10 3v18",
           "order": 0,
-          "length": 30.772873344843678,
+          "length": 18,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         },
         {
-          "id": "pth_4e84941f28a546e0",
-          "d": "M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71",
+          "id": "pth_8c4b4472014b42a5",
+          "d": "M18 5v13",
           "order": 1,
-          "length": 30.7657919693747,
+          "length": 13,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_84bdf24de1f142e3",
+          "d": "M6 6v11",
+          "order": 2,
+          "length": 11,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_694b43a564904bcd",
+          "d": "M14 8v7",
+          "order": 3,
+          "length": 7,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_47944f12c0aa49e2",
+          "d": "M2 10v3",
+          "order": 4,
+          "length": 3,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_28c8a3ea47d94109",
+          "d": "M22 10v3",
+          "order": 5,
+          "length": 3,
           "strokeWidth": 1,
           "stroke": "#111111",
           "fill": null
         }
       ],
+      "markup": null,
+      "reveal": "stroke",
       "accentColor": "#f97316",
-      "promptHash": "c62d7eafbcb4a23d27c3d931f0fada6e2073b9dc25d14b78c59ca4d90bf9c174",
+      "promptHash": "c747840483cadd220247268763d55ba736826754cc817f66c1aaa353ad9a03d9",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_0fe7edf8b2b34bd0",
+      "name": "notebook page on screen",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 24,
+        "height": 24
+      },
+      "paths": [
+        {
+          "id": "pth_42270a1913de4530",
+          "d": "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
+          "order": 0,
+          "length": 66.28813197746555,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_ff5d2a6885e34b06",
+          "d": "M14 2v5a1 1 0 0 0 1 1h5",
+          "order": 1,
+          "length": 11.570794532450796,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_c9547737249d4dfb",
+          "d": "M16 13H8",
+          "order": 2,
+          "length": 8,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_459f17daba2f4bb4",
+          "d": "M16 17H8",
+          "order": 3,
+          "length": 8,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_86577f5760d84f5f",
+          "d": "M10 9H8",
+          "order": 4,
+          "length": 2,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        }
+      ],
+      "markup": null,
+      "reveal": "stroke",
+      "accentColor": "#f97316",
+      "promptHash": "38789800bf2befc2b29bc6e6a3f652e512bab5b77174824c08e1168cad86d925",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_fe7b580c226148b2",
+      "name": "stick figures raising hands",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 24,
+        "height": 24
+      },
+      "paths": [
+        {
+          "id": "pth_9c8d79408a324066",
+          "d": "M 4 6 H 20 A 2 2 0 0 1 22 8 V 14 A 2 2 0 0 1 20 16 H 4 A 2 2 0 0 1 2 14 V 8 A 2 2 0 0 1 4 6 Z",
+          "order": 0,
+          "length": 56.56635625960637,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_18e3091ff011495f",
+          "d": "M12 12v-2",
+          "order": 1,
+          "length": 2,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_87cc40046fd0468f",
+          "d": "M12 18v-2",
+          "order": 2,
+          "length": 2,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_18f53dab6b134660",
+          "d": "M16 12v-2",
+          "order": 3,
+          "length": 2,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_351c51d6612246a0",
+          "d": "M16 18v-2",
+          "order": 4,
+          "length": 2,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_3bd522f1e07b4359",
+          "d": "M20 18v-2",
+          "order": 5,
+          "length": 2,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_442f46644743440a",
+          "d": "M4 18v-2",
+          "order": 6,
+          "length": 2,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_535d5916e2cf4f50",
+          "d": "M8 12v-2",
+          "order": 7,
+          "length": 2,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_75b35e88994e40a4",
+          "d": "M8 18v-2",
+          "order": 8,
+          "length": 2,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_48e820c59f494b8c",
+          "d": "M2 11h1.5",
+          "order": 9,
+          "length": 1.5,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_e01a050fad2c40f1",
+          "d": "M20.5 11H22",
+          "order": 10,
+          "length": 1.5,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        }
+      ],
+      "markup": null,
+      "reveal": "stroke",
+      "accentColor": "#f97316",
+      "promptHash": "3ec9f6c33b92a09e9e3b8dec55d72bafc65d11c7bf6419a96c6eff23712b1d3c",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_e64f9018df4d4a06",
+      "name": "block being added to chain",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 24,
+        "height": 24
+      },
+      "paths": [
+        {
+          "id": "pth_60cd9552b6ae42e0",
+          "d": "M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z",
+          "order": 0,
+          "length": 60.80719443809261,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_6cdc4e1c65844068",
+          "d": "m3.3 7 8.7 5 8.7-5",
+          "order": 1,
+          "length": 20.06888138387389,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_5dd99860f00c46d7",
+          "d": "M12 22V12",
+          "order": 2,
+          "length": 10,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        }
+      ],
+      "markup": null,
+      "reveal": "stroke",
+      "accentColor": "#f97316",
+      "promptHash": "934f0cc70d1aaba0ec711b95bc16af975350c3ab245260ddfb67b34233989cbd",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_b6eb36e217e2492b",
+      "name": "checkmark icon",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 200,
+        "height": 200
+      },
+      "paths": [
+        {
+          "id": "pth_54d61f7f8bd34ff1",
+          "d": "M40 110 L85 155 L160 55",
+          "order": 0,
+          "length": 188.63961030678928,
+          "strokeWidth": 8,
+          "stroke": "#111111",
+          "fill": null
+        }
+      ],
+      "markup": null,
+      "reveal": "stroke",
+      "accentColor": "#f97316",
+      "promptHash": "032ee11a90c768be0c9eeba2fd100d1d6b2c98c8ad9de7cea3c6433a6efb27ef",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_8495a747ec854749",
+      "name": "box and arrow supply chain",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 24,
+        "height": 24
+      },
+      "paths": [
+        {
+          "id": "pth_40e17c7feb2443d3",
+          "d": "m2 16 4.039-9.69a.5.5 0 0 1 .923 0L11 16",
+          "order": 0,
+          "length": 22.17157157697991,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_9bd87b98c84e4b95",
+          "d": "m14 12 4 4 4-4",
+          "order": 1,
+          "length": 11.313708498984761,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_0b30b2ac4db2456c",
+          "d": "M18 16V7",
+          "order": 2,
+          "length": 9,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_7a4a81fe90944571",
+          "d": "M3.304 13h6.392",
+          "order": 3,
+          "length": 6.392,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        }
+      ],
+      "markup": null,
+      "reveal": "stroke",
+      "accentColor": "#f97316",
+      "promptHash": "b18b5b01603f12821490975cf56a6556328e31cc1cbd6358d6462b730e411468",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_2eb618dea9334755",
+      "name": "medical cross with lock",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 24,
+        "height": 24
+      },
+      "paths": [
+        {
+          "id": "pth_09c78108324748a5",
+          "d": "M20 15v6a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20",
+          "order": 0,
+          "length": 41.42474027958017,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_3a9f36e7f12242d7",
+          "d": "M 13 6 H 19 A 1 1 0 0 1 20 7 V 10 A 1 1 0 0 1 19 11 H 13 A 1 1 0 0 1 12 10 V 7 A 1 1 0 0 1 13 6 Z",
+          "order": 1,
+          "length": 24.28317812980319,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_fd4742fc6e49430c",
+          "d": "M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H10",
+          "order": 2,
+          "length": 22.42698633112699,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_13b486c9a2b841c2",
+          "d": "M18 6V4a2 2 0 1 0-4 0v2",
+          "order": 3,
+          "length": 10.283156597703492,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        }
+      ],
+      "markup": null,
+      "reveal": "stroke",
+      "accentColor": "#f97316",
+      "promptHash": "5d95638cbf6aabf0cc7228b7000ec150cdac8908bf72cb086231582db0dea5ca",
+      "styleVersion": 1
+    },
+    {
+      "id": "ill_44cc008a1b894729",
+      "name": "paint palette with certificate",
+      "viewBox": {
+        "minX": 0,
+        "minY": 0,
+        "width": 24,
+        "height": 24
+      },
+      "paths": [
+        {
+          "id": "pth_727f764c418346e7",
+          "d": "m8.5 4.5 2.148-2.148a1.205 1.205 0 0 1 1.704 0l7.296 7.296a1.205 1.205 0 0 1 0 1.704l-7.592 7.592a3.615 3.615 0 0 1-5.112 0l-3.888-3.888a3.615 3.615 0 0 1 0-5.112L5.67 7.33",
+          "order": 0,
+          "length": 48.42877746499441,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_d550150be58c4030",
+          "d": "M18.992 12H2.041",
+          "order": 1,
+          "length": 16.951,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_1c2db41fccc8443d",
+          "d": "M21.145 18.38A3.34 3.34 0 0 1 20 16.5a3.3 3.3 0 0 1-1.145 1.88c-.575.46-.855 1.02-.855 1.595A2 2 0 0 0 20 22a2 2 0 0 0 2-2.025c0-.58-.285-1.13-.855-1.595",
+          "order": 2,
+          "length": 14.567663658504602,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        },
+        {
+          "id": "pth_f5843563d5404325",
+          "d": "M11 7 6 2",
+          "order": 3,
+          "length": 7.0710678118654755,
+          "strokeWidth": 1,
+          "stroke": "#111111",
+          "fill": null
+        }
+      ],
+      "markup": null,
+      "reveal": "stroke",
+      "accentColor": "#f97316",
+      "promptHash": "0ccf5d4a4e3fb5995a79441ac6fbd284ee6770ee4469d483b0c35881bf62a7af",
       "styleVersion": 1
     }
   ]

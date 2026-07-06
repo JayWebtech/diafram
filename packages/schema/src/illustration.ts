@@ -40,20 +40,47 @@ export const zDrawablePath = z.object({
 });
 export type DrawablePath = z.infer<typeof zDrawablePath>;
 
-export const zIllustration = z.object({
-  id: zIllustrationId,
-  /** Human/AI-facing label, e.g. "closed padlock". */
-  name: z.string().min(1),
-  viewBox: zViewBox,
-  paths: z.array(zDrawablePath).min(1, "An illustration needs at least one path"),
-  /** Optional single accent color permitted by the style rules. */
-  accentColor: zHexColor.nullable().default(null),
-  /**
-   * Hash of the normalized semantic prompt used to generate this illustration.
-   * Enables the content-addressed reuse library (draw a "lock" once, reuse it).
-   */
-  promptHash: z.string().nullable().default(null),
-  /** Style-guide version this artwork was generated under. */
-  styleVersion: z.number().int().min(1).default(1),
-});
+/**
+ * How an illustration is revealed on screen:
+ *  - `stroke`: hand-drawing via stroke-dash (line art) — the default.
+ *  - `wipe`: a directional clip reveal, for filled artwork that can't be "drawn"
+ *    stroke-by-stroke (e.g. colored hand-drawn people).
+ */
+export const REVEAL_MODES = ["stroke", "wipe"] as const;
+export const zRevealMode = z.enum(REVEAL_MODES);
+export type RevealMode = z.infer<typeof zRevealMode>;
+
+export const zIllustration = z
+  .object({
+    id: zIllustrationId,
+    /** Human/AI-facing label, e.g. "closed padlock". */
+    name: z.string().min(1),
+    viewBox: zViewBox,
+    /** Ordered stroked paths (for `stroke` reveal). Empty when `markup` is used. */
+    paths: z.array(zDrawablePath).default([]),
+    /**
+     * Trusted, self-contained inner SVG markup for filled artwork rendered
+     * wholesale and revealed by a `wipe`. When set, `paths` is empty.
+     */
+    markup: z.string().nullable().default(null),
+    reveal: zRevealMode.default("stroke"),
+    /** Optional single accent color permitted by the style rules. */
+    accentColor: zHexColor.nullable().default(null),
+    /**
+     * Hash of the normalized semantic prompt used to generate this illustration.
+     * Enables the content-addressed reuse library (draw a "lock" once, reuse it).
+     */
+    promptHash: z.string().nullable().default(null),
+    /** Style-guide version this artwork was generated under. */
+    styleVersion: z.number().int().min(1).default(1),
+  })
+  .superRefine((ill, ctx) => {
+    if (ill.paths.length === 0 && !ill.markup) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["paths"],
+        message: "An illustration needs at least one path or markup",
+      });
+    }
+  });
 export type Illustration = z.infer<typeof zIllustration>;

@@ -1,0 +1,57 @@
+// diafram persistence schema.
+//
+// Projects hold the full VideoProject + storyboard as validated JSON (the
+// document is consumed atomically by the renderer, so relational-per-layer buys
+// nothing). Illustrations are content-addressed for the reuse library. RenderJob
+// tracks an export from enqueue to a stored MP4.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id           String      @id @default(cuid())
+  title        String
+  prompt       String
+  /// The approved storyboard (JSON), if any.
+  storyboard   Json?
+  /// The compiled, render-ready VideoProject (JSON).
+  videoProject Json?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  renderJobs   RenderJob[]
+
+  @@index([createdAt])
+}
+
+/// Content-addressed illustration reuse library (keyed by brief+style hash).
+model Illustration {
+  id        String   @id @default(cuid())
+  hash      String   @unique
+  name      String
+  /// The validated Illustration (JSON).
+  data      Json
+  createdAt DateTime @default(now())
+}
+
+model RenderJob {
+  id        String   @id @default(cuid())
+  project   Project? @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  projectId String?
+  title     String
+  /// queued | rendering | done | failed
+  status    String   @default("queued")
+  progress  Float    @default(0)
+  /// Storage key of the finished MP4 (in R2 / local storage).
+  outputKey String?
+  error     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+}

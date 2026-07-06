@@ -44,3 +44,16 @@ export function layerTransformString(transform: Transform, viewBox: ViewBox): st
     `translate(${n(-viewBox.minX)}, ${n(-viewBox.minY)})`,
   ].join(" ");
 }
+
+/**
+ * Transform for a markup illustration rendered as a nested `<svg>` (which
+ * establishes its own viewBox/coordinate space), so no viewBox-origin translate
+ * is needed — just place, rotate, and scale.
+ */
+export function markupTransformString(transform: Transform): string {
+  return [
+    `translate(${n(transform.x)}, ${n(transform.y)})`,
+    `scale(${n(transform.scale)})`,
+    `rotate(${n(transform.rotation)})`,
+  ].join(" ");
+}

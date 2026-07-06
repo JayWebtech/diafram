@@ -1,23 +1,52 @@
 import type { LlmPort } from "../llm/port";
+import { createTransformersEmbedder } from "./embedder";
 import { createLibraryIllustrationSource } from "./library";
-import { CURATED_LUCIDE, loadLucidePack } from "./packs/lucide";
-import { ChainedIllustrationSource, LlmIllustrationSource, type IllustrationSource } from "./source";
-import { STARTER_PACK } from "./starter-pack";
+import { loadAllLucide } from "./packs/lucide";
+import { PeopleIllustrationSource } from "./packs/people";
+import { LexicalRetrieverFactory } from "./retrieve";
+import { SemanticRetrieverFactory } from "./semantic";
+import {
+  ChainedIllustrationSource,
+  LlmIllustrationSource,
+  type IllustrationSource,
+} from "./source";
 
 /**
- * The default production art source: a professional icon library first, LLM
- * generation as the fallback for briefs the library doesn't cover. Both tiers
- * share the same normalization, so output is style-consistent regardless of
- * origin.
+ * The default production art source: a large professional icon library first,
+ * hand-drawn people for person briefs, and the LLM as the last-resort fallback.
+ * All tiers share the same normalization, so output is style-consistent.
  *
- * The library imports the Lucide pack (ISC, ~1,500 consistent line icons) if it
- * resolves; the hand-authored starter icons are folded in as a small supplement.
- * (Tier-2 vector generation and a vision QA gate slot into this chain later.)
+ * The library imports the FULL Lucide set (~2,000 icons) for broad coverage, so
+ * the weak LLM artist is rarely needed. Retrieval is semantic when the local
+ * model loads, else lexical. The (expensive) library build is cached per process.
  */
-export async function createDefaultIllustrationSource(llm: LlmPort): Promise<IllustrationSource> {
-  const lucide = loadLucidePack(CURATED_LUCIDE);
-  const pack = [...lucide, ...STARTER_PACK];
+let cachedLibrary: Promise<IllustrationSource> | null = null;
 
-  const library = await createLibraryIllustrationSource(pack);
-  return new ChainedIllustrationSource([library, new LlmIllustrationSource(llm)]);
+async function buildLibrary(): Promise<IllustrationSource> {
+  const pack = loadAllLucide();
+
+  if (process.env.DIAFRAM_EMBEDDINGS !== "off") {
+    try {
+      const embedder = createTransformersEmbedder();
+      return await createLibraryIllustrationSource(pack, {
+        retrieverFactory: new SemanticRetrieverFactory(embedder),
+      });
+    } catch {
+      // Embedding model unavailable — fall through to lexical.
+    }
+  }
+
+  return createLibraryIllustrationSource(pack, {
+    retrieverFactory: new LexicalRetrieverFactory(),
+  });
+}
+
+export async function createDefaultIllustrationSource(llm: LlmPort): Promise<IllustrationSource> {
+  cachedLibrary ??= buildLibrary();
+  const library = await cachedLibrary;
+  return new ChainedIllustrationSource([
+    new PeopleIllustrationSource(),
+    library,
+    new LlmIllustrationSource(llm),
+  ]);
 }

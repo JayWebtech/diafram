@@ -1,30 +1,31 @@
-import { createReadStream, statSync } from "node:fs";
+import { readFileSync, unlinkSync } from "node:fs";
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
-import { zVideoProject } from "@diafram/schema";
-import { resolveBackend, type RenderRequest } from "./backend";
-import { JobStore } from "./jobs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { zVideoProject, type VideoProject } from "@diafram/schema";
+import { createRenderJob, getRenderJob, updateRenderJob } from "@diafram/db";
+import { createStorage } from "@diafram/storage";
+import { renderProjectToFile } from "./render";
 
 /**
  * The render worker HTTP service.
  *
- * A standalone process (not inside Next) that owns the job store and drives the
- * render backend. The web app talks to it over HTTP: POST a project to enqueue,
- * poll for progress, download the finished MP4. In production this becomes a
- * queue-fed fleet (or Lambda) behind the same three endpoints.
+ * A standalone process (not inside Next) that persists jobs to Postgres and
+ * writes finished MP4s to object storage (R2 in prod, local in dev). The web app
+ * talks to it over HTTP: POST a project to enqueue, poll status, download the
+ * stored MP4. Jobs now survive a restart.
  */
 const PORT = Number(process.env.RENDER_PORT ?? 3939);
-const store = new JobStore();
-const backend = resolveBackend();
+const storage = createStorage();
 
 function json(res: ServerResponse, status: number, body: unknown): void {
-  const payload = JSON.stringify(body);
   res.writeHead(status, {
     "content-type": "application/json",
     "access-control-allow-origin": "*",
     "access-control-allow-headers": "content-type",
     "access-control-allow-methods": "GET,POST,OPTIONS",
   });
-  res.end(payload);
+  res.end(JSON.stringify(body));
 }
 
 function readBody(req: IncomingMessage): Promise<string> {
@@ -36,18 +37,45 @@ function readBody(req: IncomingMessage): Promise<string> {
   });
 }
 
-/** Kick off a render in the background, streaming progress into the job store. */
-function startRender(jobId: string, request: RenderRequest): void {
-  store.update(jobId, { status: "rendering" });
-  backend
-    .render(jobId, request, (progress) => store.update(jobId, { progress }))
-    .then(({ outputPath }) => store.update(jobId, { status: "done", progress: 1, outputPath }))
-    .catch((err: unknown) => {
-      store.update(jobId, {
+/** Render in the background: temp file → object storage, progress → job row. */
+function startRender(jobId: string, project: VideoProject, frameRange?: [number, number]): void {
+  void (async () => {
+    const tmpPath = join(tmpdir(), `diafram-${jobId}.mp4`);
+    try {
+      await updateRenderJob(jobId, { status: "rendering" });
+      let lastPct = -1;
+      await renderProjectToFile({
+        project,
+        outputPath: tmpPath,
+        frameRange,
+        onProgress: (progress) => {
+          const pct = Math.floor(progress * 100);
+          if (pct !== lastPct) {
+            lastPct = pct;
+            void updateRenderJob(jobId, { progress }).catch(() => {});
+          }
+        },
+      });
+      const key = `renders/${jobId}.mp4`;
+      await storage.put(key, readFileSync(tmpPath), "video/mp4");
+      await updateRenderJob(jobId, { status: "done", progress: 1, outputKey: key });
+    } catch (err) {
+      await updateRenderJob(jobId, {
         status: "failed",
         error: err instanceof Error ? err.message : String(err),
-      });
-    });
+      }).catch(() => {});
+    } finally {
+      try {
+        unlinkSync(tmpPath);
+      } catch {
+        /* temp file may not exist */
+      }
+    }
+  })();
+}
+
+function sanitizeFilename(name: string): string {
+  return name.replace(/[^\w -]+/g, "").trim().replace(/\s+/g, "-").slice(0, 60) || "explainer";
 }
 
 const server = createServer(async (req, res) => {
@@ -57,37 +85,38 @@ const server = createServer(async (req, res) => {
   if (req.method === "OPTIONS") return json(res, 204, {});
   if (pathname === "/health") return json(res, 200, { ok: true });
 
-  // POST /render — enqueue a render.
   if (req.method === "POST" && pathname === "/render") {
     try {
-      const body = JSON.parse(await readBody(req)) as { project?: unknown; frameRange?: [number, number] };
+      const body = JSON.parse(await readBody(req)) as {
+        project?: unknown;
+        frameRange?: [number, number];
+      };
       const project = zVideoProject.parse(body.project);
-      const job = store.create(project.title);
-      startRender(job.id, { project, frameRange: body.frameRange });
+      const job = await createRenderJob({ title: project.title });
+      startRender(job.id, project, body.frameRange);
       return json(res, 202, { id: job.id });
     } catch (err) {
       return json(res, 400, { error: err instanceof Error ? err.message : "Invalid request" });
     }
   }
 
-  // GET /render/:id and /render/:id/download
   const match = pathname.match(/^\/render\/([\w-]+)(\/download)?$/);
   if (req.method === "GET" && match) {
-    const job = store.get(match[1]!);
+    const job = await getRenderJob(match[1]!);
     if (!job) return json(res, 404, { error: "Job not found" });
 
     if (match[2]) {
-      if (job.status !== "done" || !job.outputPath) {
+      if (job.status !== "done" || !job.outputKey) {
         return json(res, 409, { error: "Render not finished" });
       }
-      const size = statSync(job.outputPath).size;
+      const buffer = await storage.get(job.outputKey);
       res.writeHead(200, {
         "content-type": "video/mp4",
-        "content-length": size,
+        "content-length": buffer.length,
         "content-disposition": `attachment; filename="${sanitizeFilename(job.title)}.mp4"`,
         "access-control-allow-origin": "*",
       });
-      return void createReadStream(job.outputPath).pipe(res);
+      return void res.end(buffer);
     }
 
     return json(res, 200, {
@@ -102,10 +131,8 @@ const server = createServer(async (req, res) => {
   return json(res, 404, { error: "Not found" });
 });
 
-function sanitizeFilename(name: string): string {
-  return name.replace(/[^\w -]+/g, "").trim().replace(/\s+/g, "-").slice(0, 60) || "explainer";
-}
-
 server.listen(PORT, () => {
-  console.log(`diafram render worker listening on http://localhost:${PORT} (backend: ${process.env.RENDER_BACKEND ?? "local"})`);
+  console.log(
+    `diafram render worker on http://localhost:${PORT} (storage: ${process.env.STORAGE_BACKEND ?? "local"})`,
+  );
 });

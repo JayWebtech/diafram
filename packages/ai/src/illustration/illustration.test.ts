@@ -1,7 +1,7 @@
 import { makeIllustration } from "@diafram/schema/fixtures";
 import { newPathId, zIllustration } from "@diafram/schema";
 import { describe, expect, it } from "vitest";
-import { LexicalRetriever, tokenize } from "./retrieve";
+import { LexicalRetrieverFactory } from "./retrieve";
 import { withAccent, withDrawOrder, withInk, withUniformStroke } from "./normalize";
 import { createLibraryIllustrationSource } from "./library";
 import { STARTER_PACK } from "./starter-pack";
@@ -48,11 +48,14 @@ describe("normalization", () => {
 });
 
 describe("lexical retrieval", () => {
-  it("scores by fraction of brief tokens matched", () => {
-    const docs = [tokenize("closed padlock", ["lock", "secure"]), tokenize("arrow", ["next"])];
-    const ranked = new LexicalRetriever().rank("closed padlock", docs);
+  it("matches a descriptive brief on its salient tokens", async () => {
+    const retriever = await new LexicalRetrieverFactory().build([
+      "closed padlock lock secure",
+      "arrow next forward",
+    ]);
+    const ranked = await retriever.rank("a closed padlock");
     expect(ranked[0]!.index).toBe(0);
-    expect(ranked[0]!.score).toBeCloseTo(1, 5);
+    expect(ranked[0]!.score).toBeGreaterThan(0.9);
   });
 });
 
