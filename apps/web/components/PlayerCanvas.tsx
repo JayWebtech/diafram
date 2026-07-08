@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Player, type PlayerRef } from "@remotion/player";
 import { VideoComposition, getCompositionMetadata } from "@diafram/renderer";
 import type { VideoProject } from "@diafram/schema";
@@ -21,6 +21,16 @@ export type PlayerCanvasProps = {
 export function PlayerCanvas({ project, register, onFrame }: PlayerCanvasProps) {
   const ref = useRef<PlayerRef>(null);
   const [mounted, setMounted] = useState(false);
+
+  // Give every audio source its own dedicated <audio> tag so the Player never
+  // recycles a shared tag mid-session. Recycling a tag onto another scene's
+  // narration data-URI is what makes the preview crackle and double up — the
+  // downloaded render is unaffected since it mixes audio deterministically.
+  const audioTagCount = useMemo(() => {
+    const narrated = project.scenes.filter((scene) => scene.narrationAudioUrl).length;
+    const music = project.backgroundMusic ? 1 : 0;
+    return Math.max(1, narrated + music);
+  }, [project.scenes, project.backgroundMusic]);
 
   useEffect(() => setMounted(true), []);
 
@@ -52,6 +62,7 @@ export function PlayerCanvas({ project, register, onFrame }: PlayerCanvasProps) 
       fps={meta.fps}
       compositionWidth={meta.width}
       compositionHeight={meta.height}
+      numberOfSharedAudioTags={audioTagCount}
       controls
       loop
       style={{
