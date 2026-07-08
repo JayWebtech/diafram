@@ -1,8 +1,10 @@
 import type { DrawablePath, Illustration, Layer } from "@diafram/schema";
 import { viewBoxToString } from "@diafram/schema";
-import { applyEasing, getIllustrationDrawState, getLayerDrawProgress } from "@diafram/engine";
+import { applyEasing, getActivePath, getIllustrationDrawState, getLayerDrawProgress } from "@diafram/engine";
 import { useCurrentFrame } from "remotion";
 import { DrawPath } from "./DrawPath";
+import { PenTip } from "./PenTip";
+import { PaperShadowFilter, PAPER_SHADOW_ID, RoughenFilter, roughenFilterId } from "./ink";
 import { layerTransformString, markupTransformString } from "./geometry";
 
 /**
@@ -42,16 +44,31 @@ function StrokeIllustration({
     illustration.paths.map((path) => [path.id, path]),
   );
 
+  // The stroke currently under the pen (null before/after drawing) → nib position.
+  const active = getActivePath(drawState);
+  const activePath = active ? pathsById.get(active.id) : undefined;
+
   return (
     <g
       transform={layerTransformString(layer.transform, illustration.viewBox)}
       opacity={layer.opacity}
     >
-      {drawState.paths.map((state) => {
-        const path = pathsById.get(state.id);
-        if (!path) return null;
-        return <DrawPath key={state.id} path={path} state={state} />;
-      })}
+      <defs>
+        <RoughenFilter illustrationId={illustration.id} viewBox={illustration.viewBox} />
+        <PaperShadowFilter />
+      </defs>
+      {/* Roughened, softly-shadowed ink. Filters are static + deterministic. */}
+      <g filter={`url(#${roughenFilterId(illustration.id)})`}>
+        <g filter={`url(#${PAPER_SHADOW_ID})`}>
+          {drawState.paths.map((state) => {
+            const path = pathsById.get(state.id);
+            if (!path) return null;
+            return <DrawPath key={state.id} path={path} state={state} />;
+          })}
+        </g>
+      </g>
+      {/* The pen tip sits above the ink, unroughened, at the live drawing head. */}
+      {active && activePath ? <PenTip path={activePath} state={active} /> : null}
     </g>
   );
 }
@@ -79,11 +96,12 @@ function WipeIllustration({
   return (
     <g transform={transform} opacity={layer.opacity}>
       <defs>
+        <PaperShadowFilter />
         <clipPath id={clipId}>
           <rect x={clipX} y={clipY} width={revealWidth} height={viewBox.height} />
         </clipPath>
       </defs>
-      <g clipPath={`url(#${clipId})`}>
+      <g clipPath={`url(#${clipId})`} filter={`url(#${PAPER_SHADOW_ID})`}>
         {isMarkup ? (
           <svg
             width={viewBox.width}

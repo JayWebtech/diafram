@@ -6,7 +6,7 @@ import { applyEasing } from "./easing";
 import { interpolate, lerp } from "./interpolate";
 import { valueNoise1D } from "./rng";
 import { getCameraTransform } from "./camera";
-import { getIllustrationDrawState, getLayerDrawProgress } from "./draw";
+import { getActivePath, getIllustrationDrawState, getLayerDrawProgress } from "./draw";
 import { compileTimeline, getSceneAtFrame } from "./timeline";
 
 describe("easing", () => {
@@ -129,6 +129,22 @@ describe("hand-drawing", () => {
     const none = getIllustrationDrawState(twoPaths, layer, 0);
     expect(none.paths[0]!.dashOffset).toBeCloseTo(10, 6);
     expect(none.paths[1]!.dashOffset).toBeCloseTo(30, 6);
+  });
+
+  it("locates the active path under the pen", () => {
+    // Not started / finished → no pen.
+    expect(getActivePath(getIllustrationDrawState(twoPaths, layer, 0))).toBeNull();
+    expect(getActivePath(getIllustrationDrawState(twoPaths, layer, 40))).toBeNull();
+
+    // Early: first (long-ordered) path is mid-draw.
+    const early = getActivePath(getIllustrationDrawState(twoPaths, layer, 5));
+    expect(early).not.toBeNull();
+    expect(early!.progress).toBeGreaterThan(0);
+    expect(early!.progress).toBeLessThan(1);
+
+    // Late in the window: the second path is the one under the pen.
+    const late = getActivePath(getIllustrationDrawState(twoPaths, layer, 30));
+    expect(late!.id).toBe(twoPaths.paths[1]!.id);
   });
 });
 

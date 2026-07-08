@@ -88,3 +88,23 @@ export function getIllustrationDrawState(
 
   return { overallProgress, paths };
 }
+
+/**
+ * The path currently under the pen — the one that is partway drawn at this
+ * frame (`0 < progress < 1`). Returns `null` before drawing starts, between
+ * strokes on an exact boundary, and once the whole illustration is complete.
+ *
+ * Used to place the marker/pen tip at the live drawing head. Pure, so preview
+ * and render agree on where the pen is.
+ */
+export function getActivePath(state: IllustrationDrawState): PathDrawState | null {
+  if (state.overallProgress <= 0 || state.overallProgress >= 1) return null;
+  // The active stroke is the last one that has started but not yet finished.
+  // Walking from the end finds the current pen position even if a later short
+  // path has a progress of exactly 0.
+  for (let i = state.paths.length - 1; i >= 0; i--) {
+    const path = state.paths[i]!;
+    if (path.progress > 0 && path.progress < 1) return path;
+  }
+  return null;
+}
