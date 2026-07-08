@@ -281,4 +281,4 @@ Render defaults (edit in `packages/schema/src/constants.ts`): **1920×1080**, **
 
 ## License
 
-_Add your license of choice here (e.g. MIT) before publishing._
+Released under the [MIT License](./LICENSE).
