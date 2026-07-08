@@ -12,6 +12,8 @@ Built with Next.js · React 19 · Remotion · Prisma · TypeScript
 
 ---
 
+https://github.com/user-attachments/assets/764d0589-6ce0-49c7-b6f3-d619aed789d0
+
 ## What it does
 
 diafram is an AI pipeline that produces short "whiteboard" style explainer videos. You give it a prompt like _"Explain how HTTPS works"_, and it:
